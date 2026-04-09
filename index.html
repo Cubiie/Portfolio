@@ -320,6 +320,58 @@
             text-align: center;
         }
 
+        /* Video case study variant — full-bleed video + frosted glass text */
+        .case-study--video .parallax-bg {
+            display: none;
+        }
+
+        .case-bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .case-study--video::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(7, 23, 42, 0.55) 0%, rgba(20, 53, 86, 0.45) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .case-study--video .case-content {
+            grid-template-columns: 1fr;
+            justify-items: start;
+            z-index: 2;
+        }
+
+        .case-study--video:nth-child(even) .case-content {
+            justify-items: end;
+        }
+
+        .case-study--video .case-text {
+            max-width: 560px;
+            padding: 3rem 3.5rem;
+            background: rgba(7, 23, 42, 0.45);
+            backdrop-filter: blur(24px) saturate(160%);
+            -webkit-backdrop-filter: blur(24px) saturate(160%);
+            border: 1px solid rgba(234, 240, 247, 0.15);
+            border-radius: 4px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 968px) {
+            .case-study--video .case-text {
+                padding: 2rem 2rem;
+                max-width: 100%;
+            }
+        }
+
         /* Footer */
         .footer {
             padding: 6rem 4rem 4rem;
@@ -419,9 +471,12 @@
         </div>
     </section>
 
-    <!-- Case Study 2 -->
-    <section class="case-study" data-scroll>
+    <!-- Case Study 2 — video variant -->
+    <section class="case-study case-study--video" data-scroll>
         <div class="parallax-bg"></div>
+        <video class="case-bg-video" autoplay muted loop playsinline>
+            <source src="video.mp4" type="video/mp4">
+        </video>
         <div class="case-content">
             <div class="case-text">
                 <div class="case-number">02</div>
@@ -435,11 +490,6 @@
                 <a href="#" class="case-link">
                     View Case Study →
                 </a>
-            </div>
-            <div class="case-visual">
-                <div class="visual-frame">
-                    <video src="video.mp4" autoplay muted loop playsinline></video>
-                </div>
             </div>
         </div>
     </section>
