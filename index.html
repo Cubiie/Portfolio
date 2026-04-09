@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Creative Work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FBF8F3;
+            --charcoal: #2A2A2A;
+            --rust: #C45D3F;
+            --sage: #8B9D83;
+            --gold: #D4AF37;
+            --soft-black: #1A1A1A;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--soft-black) 0%, var(--charcoal) 100%);
+            transform: translateZ(0);
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(196, 93, 63, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 157, 131, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--cream);
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1s forwards;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-left: 2px solid var(--cream);
+            border-bottom: 2px solid var(--cream);
+            transform: rotate(-45deg);
+            animation: scrollBounce 2s infinite;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+        }
+
+        @keyframes scrollBounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: rotate(-45deg) translateY(0);
+            }
+            40% {
+                transform: rotate(-45deg) translateY(10px);
+            }
+            60% {
+                transform: rotate(-45deg) translateY(5px);
+            }
+        }
+
+        /* Case Study Section */
+        .case-study {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .case-study:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            top: -10%;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+        }
+
+        .case-study:nth-child(2) .parallax-bg {
+            background: linear-gradient(rgba(196, 93, 63, 0.9), rgba(196, 93, 63, 0.95)),
+                        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%23C45D3F" width="100" height="100"/><circle fill="%23D4AF37" fill-opacity="0.1" cx="50" cy="50" r="40"/></svg>');
+        }
+
+        .case-study:nth-child(3) .parallax-bg {
+            background: linear-gradient(rgba(139, 157, 131, 0.9), rgba(139, 157, 131, 0.95)),
+                        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%238B9D83" width="100" height="100"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="%23D4AF37" stroke-opacity="0.1" fill="none" stroke-width="2"/></svg>');
+        }
+
+        .case-study:nth-child(4) .parallax-bg {
+            background: linear-gradient(rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0.95)),
+                        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%23D4AF37" width="100" height="100"/><rect fill="%232A2A2A" fill-opacity="0.1" x="10" y="10" width="30" height="30"/></svg>');
+        }
+
+        .case-study:nth-child(5) .parallax-bg {
+            background: linear-gradient(rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.95)),
+                        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%232A2A2A" width="100" height="100"/><line x1="0" y1="0" x2="100" y2="100" stroke="%23C45D3F" stroke-opacity="0.1" stroke-width="1"/></svg>');
+        }
+
+        .case-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .case-study:nth-child(even) .case-content {
+            direction: ltr;
+        }
+
+        .case-text {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .case-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .case-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            color: var(--cream);
+            opacity: 0.6;
+            margin-bottom: 1rem;
+        }
+
+        .case-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 400;
+            color: var(--cream);
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .case-text p {
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.8;
+            color: var(--cream);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(251, 248, 243, 0.3);
+            color: var(--cream);
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: var(--cream);
+            color: var(--charcoal);
+        }
+
+        .case-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid var(--cream);
+            transition: all 0.3s ease;
+        }
+
+        .case-link:hover {
+            gap: 1rem;
+            opacity: 0.7;
+        }
+
+        .case-visual {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+        }
+
+        .case-visual.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .visual-frame {
+            aspect-ratio: 4/3;
+            background: rgba(251, 248, 243, 0.1);
+            border: 1px solid rgba(251, 248, 243, 0.2);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visual-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(251, 248, 243, 0.1) 0%, transparent 100%);
+        }
+
+        .visual-placeholder {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            color: var(--cream);
+            opacity: 0.3;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 6rem 4rem 4rem;
+            text-align: center;
+            background: var(--soft-black);
+            color: var(--cream);
+        }
+
+        .footer h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1.125rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--rust);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(251, 248, 243, 0.2);
+            font-size: 0.875rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .case-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 3rem 2rem;
+            }
+
+            .case-study:nth-child(even) .case-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Your Name</h1>
+            <p>Creative Director & Designer</p>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Case Study 1 -->
+    <section class="case-study" data-scroll>
+        <div class="parallax-bg"></div>
+        <div class="case-content">
+            <div class="case-text">
+                <div class="case-number">01</div>
+                <h2>Brand Identity Reimagined</h2>
+                <p>A comprehensive rebrand for a heritage luxury brand, merging timeless elegance with contemporary digital presence. The project spanned brand strategy, visual identity, and omnichannel experience design.</p>
+                <div class="case-tags">
+                    <span class="tag">Branding</span>
+                    <span class="tag">Strategy</span>
+                    <span class="tag">Digital</span>
+                </div>
+                <a href="#" class="case-link">
+                    View Case Study →
+                </a>
+            </div>
+            <div class="case-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">Project Image</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study 2 -->
+    <section class="case-study" data-scroll>
+        <div class="parallax-bg"></div>
+        <div class="case-content">
+            <div class="case-text">
+                <div class="case-number">02</div>
+                <h2>E-Commerce Transformation</h2>
+                <p>Designing a seamless shopping experience that increased conversion by 240%. From UX research to final implementation, every touchpoint was crafted to delight and convert.</p>
+                <div class="case-tags">
+                    <span class="tag">UX Design</span>
+                    <span class="tag">E-Commerce</span>
+                    <span class="tag">Research</span>
+                </div>
+                <a href="#" class="case-link">
+                    View Case Study →
+                </a>
+            </div>
+            <div class="case-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">Project Image</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study 3 -->
+    <section class="case-study" data-scroll>
+        <div class="parallax-bg"></div>
+        <div class="case-content">
+            <div class="case-text">
+                <div class="case-number">03</div>
+                <h2>Mobile App Innovation</h2>
+                <p>Creating an award-winning mobile experience for mindful living. The app combines behavioral psychology with elegant design to help users build lasting habits.</p>
+                <div class="case-tags">
+                    <span class="tag">Mobile</span>
+                    <span class="tag">UI/UX</span>
+                    <span class="tag">Product</span>
+                </div>
+                <a href="#" class="case-link">
+                    View Case Study →
+                </a>
+            </div>
+            <div class="case-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">Project Image</div>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <!-- Case Study 4 -->
+    <section class="case-study" data-scroll>
+        <div class="parallax-bg"></div>
+        <div class="case-content">
+            <div class="case-text">
+                <div class="case-number">04</div>
+                <h2>Editorial Design System</h2>
+                <p>Building a comprehensive design system for a leading publication. The system scales across print and digital, maintaining editorial integrity while enabling creative freedom.</p>
+                <div class="case-tags">
+                    <span class="tag">Design Systems</span>
+                    <span class="tag">Editorial</span>
+                    <span class="tag">Typography</span>
+                </div>
+                <a href="#" class="case-link">
+                    View Case Study →
+                </a>
+            </div>
+            <div class="case-visual">
+                <div class="visual-frame">
+                    <div class="visual-placeholder">Project Image</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h2>Let's Create Together</h2>
+        <div class="footer-links">
+            <a href="mailto:hello@example.com">Email</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Dribbble</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth parallax scrolling
+        let ticking = false;
+
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+
+            document.querySelectorAll('.parallax-bg').forEach((bg, index) => {
+                const section = bg.closest('.case-study');
+                const rect = section.getBoundingClientRect();
+                const sectionTop = scrolled + rect.top;
+                const sectionHeight = rect.height;
+
+                // Calculate how far through the section we are
+                const relativeScroll = scrolled - sectionTop + window.innerHeight;
+                const scrollPercent = relativeScroll / (sectionHeight + window.innerHeight);
+
+                // Apply parallax effect
+                const translateY = (scrollPercent - 0.5) * 100;
+                bg.style.transform = `translateY(${translateY}px)`;
+            });
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const section = entry.target;
+                    const textElement = section.querySelector('.case-text');
+                    const visualElement = section.querySelector('.case-visual');
+
+                    if (textElement) textElement.classList.add('visible');
+                    if (visualElement) visualElement.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all case study sections
+        document.querySelectorAll('.case-study').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Initial parallax update
+        updateParallax();
+    </script>
+</body>
+</html>
