@@ -228,12 +228,12 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr;
-            justify-items: start;
+            justify-items: end;
         }
 
-        /* Alternate the card side: 01 right, 02 left, 03 right, ... */
+        /* Alternate the card side: 01 left, 02 right, 03 left, ... */
         .case-study:nth-child(odd of .case-study) .case-content {
-            justify-items: end;
+            justify-items: start;
         }
 
         .case-text {
