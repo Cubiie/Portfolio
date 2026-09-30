@@ -27,6 +27,15 @@ body {
     overflow-x: hidden;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
 a:focus-visible,
 button:focus-visible {
     outline: 2px solid var(--navy-lighter);
@@ -76,7 +85,7 @@ button:focus-visible {
 /* Hero */
 .case-hero {
     position: relative;
-    min-height: 88vh;
+    min-height: 62vh;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
@@ -120,66 +129,15 @@ button:focus-visible {
     font-weight: 300;
     line-height: 1;
     letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
 }
 
-.case-hero .lead {
-    max-width: 40rem;
-    font-size: clamp(1.0625rem, 1.8vw, 1.375rem);
-    line-height: 1.6;
-    opacity: 0.9;
-    margin-bottom: 2rem;
-}
-
-.case-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
-}
-
-.tag {
-    padding: 0.4rem 1rem;
-    border: 1px solid rgba(234, 240, 247, 0.3);
-    border-radius: 2px;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-/* Key numbers */
-.case-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    padding: 3.5rem 0;
-    border-bottom: 1px solid var(--line);
-}
-
-.stat-value {
-    display: block;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    font-weight: 400;
-    line-height: 1;
-    margin-bottom: 0.75rem;
-}
-
-.stat-label {
-    display: block;
-    max-width: 18rem;
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    opacity: 0.75;
-}
-
-/* Overview and "What I did" */
+/* "What I did" */
 .case-section {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
     padding: 5rem 0;
-    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
 }
 
 .case-section h2 {
@@ -189,12 +147,6 @@ button:focus-visible {
     text-transform: uppercase;
     opacity: 0.7;
     padding-top: 0.4rem;
-}
-
-.case-section p {
-    font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
-    line-height: 1.8;
-    opacity: 0.9;
 }
 
 .case-section ul {
@@ -225,16 +177,7 @@ button:focus-visible {
    Each item is a <figure class="media"> holding an <img> or a <video>.
    Add class "media--wide" to make an item span the full width. */
 .gallery {
-    padding: 5rem 0;
-}
-
-.gallery > h2 {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    opacity: 0.7;
-    margin-bottom: 2rem;
+    padding: 4rem 0 5rem;
 }
 
 .gallery-grid {
@@ -441,18 +384,13 @@ button:focus-visible {
     }
 
     .case-hero {
-        min-height: 80vh;
+        min-height: 50vh;
     }
 
     .case-hero .wrap {
         padding-bottom: 2.5rem;
     }
 
-    .case-stats {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        padding: 2.5rem 0;
-    }
 
     .case-section {
         grid-template-columns: 1fr;
@@ -461,7 +399,7 @@ button:focus-visible {
     }
 
     .gallery {
-        padding: 3rem 0;
+        padding: 2rem 0 3rem;
     }
 
     .gallery-grid {
