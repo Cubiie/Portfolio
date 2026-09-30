@@ -233,6 +233,34 @@
             margin-bottom: 2rem;
         }
 
+        .case-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(234, 240, 247, 0.2);
+        }
+
+        .stat-value {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            line-height: 1;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.8125rem;
+            line-height: 1.5;
+            letter-spacing: 0.03em;
+            color: var(--cream);
+            opacity: 0.75;
+        }
+
         .case-tags {
             display: flex;
             flex-wrap: wrap;
@@ -456,11 +484,21 @@
             <div class="case-text">
                 <div class="case-number">01</div>
                 <h2>ELISA OYJ</h2>
-                <p>A comprehensive rebrand for a heritage luxury brand, merging timeless elegance with contemporary digital presence. The project spanned brand strategy, visual identity, and omnichannel experience design.</p>
+                <p>Device and 5G marketing across B2C and B2B, covering the full retail calendar from weekly tactical promotions to Black Friday, the biggest peak of the year. I ran joint programmes with Samsung, Apple and Google, took campaign creative from concept to graphics and copy, and managed Elisa's social media and influencers.</p>
+                <div class="case-stats">
+                    <div class="stat">
+                        <span class="stat-value">+14%</span>
+                        <span class="stat-label">Average YoY growth in smartphone sales</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">+4&ndash;5%</span>
+                        <span class="stat-label">Annual gain in smartphone market share</span>
+                    </div>
+                </div>
                 <div class="case-tags">
-                    <span class="tag">Branding</span>
-                    <span class="tag">Strategy</span>
-                    <span class="tag">Digital</span>
+                    <span class="tag">Device &amp; 5G</span>
+                    <span class="tag">Retail Campaigns</span>
+                    <span class="tag">Partner Marketing</span>
                 </div>
                 <a href="#" class="case-link">
                     View Case Study →
