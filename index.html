@@ -257,6 +257,10 @@
             }
         }
 
+        .case-text > :last-child {
+            margin-bottom: 0;
+        }
+
         .case-text.visible {
             opacity: 1;
             transform: translateY(0);
@@ -277,7 +281,7 @@
             font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 400;
             color: var(--cream);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             line-height: 1.1;
         }
 
@@ -320,23 +324,115 @@
         .case-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.5rem;
             margin-bottom: 2rem;
         }
 
-        .tag {
-            padding: 0.5rem 1.5rem;
-            border: 1px solid rgba(251, 248, 243, 0.3);
-            color: var(--cream);
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
+        .case-tags {
+            list-style: none;
         }
 
-        .tag:hover {
-            background: var(--cream);
-            color: var(--charcoal);
+        /* Tags are labels, not buttons, so they have no hover state */
+        .tag {
+            padding: 0.4rem 1rem;
+            border: 1px solid rgba(234, 240, 247, 0.3);
+            border-radius: 2px;
+            color: var(--cream);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* "What I did": expandable list of responsibilities inside the card */
+        .case-details summary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--cream);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid var(--cream);
+            cursor: pointer;
+            list-style: none;
+            transition: gap 0.3s ease, opacity 0.3s ease;
+        }
+
+        .case-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .case-details summary::after {
+            content: '+';
+            font-size: 1.125rem;
+            line-height: 1;
+            font-weight: 300;
+        }
+
+        .case-details[open] summary::after {
+            content: '\2212';
+        }
+
+        .case-details summary:hover {
+            gap: 1rem;
+            opacity: 0.7;
+        }
+
+        .case-details summary:focus-visible {
+            outline: 2px solid var(--navy-lighter);
+            outline-offset: 4px;
+        }
+
+        .case-details .summary-less,
+        .case-details[open] .summary-more {
+            display: none;
+        }
+
+        .case-details[open] .summary-less {
+            display: inline;
+        }
+
+        .case-details ul {
+            list-style: none;
+            margin-top: 1.5rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .case-details li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--cream);
+            opacity: 0.9;
+        }
+
+        .case-details li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.8em;
+            width: 0.75rem;
+            height: 1px;
+            background: var(--navy-lighter);
+        }
+
+        .case-details[open] ul {
+            animation: detailsIn 0.4s ease-out;
+        }
+
+        @keyframes detailsIn {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .case-link {
@@ -373,6 +469,10 @@
                 transition: none;
                 opacity: 1;
                 transform: none;
+            }
+
+            .case-details[open] ul {
+                animation: none;
             }
         }
 
@@ -453,16 +553,16 @@
     </section>
 
     <!-- Case Study 1 -->
-    <section class="case-study" data-scroll>
+    <section class="case-study" id="elisa" aria-labelledby="elisa-title" data-scroll>
         <div class="parallax-bg"></div>
-        <video class="case-bg-video" autoplay muted loop playsinline preload="metadata">
+        <video class="case-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
             <source src="elisa.mp4" type="video/mp4">
         </video>
         <div class="case-content">
-            <div class="case-text">
+            <article class="case-text">
                 <div class="case-number">01</div>
-                <h2>ELISA OYJ</h2>
-                <p>Device and 5G marketing across B2C and B2B, covering the full retail calendar from weekly tactical promotions to Black Friday, the biggest peak of the year. I ran joint programmes with Samsung, Apple and Google, took campaign creative from concept to graphics and copy, and managed Elisa's social media and influencers.</p>
+                <h2 id="elisa-title">Elisa</h2>
+                <p>Device and 5G marketing across B2C and B2B, through the full retail calendar from weekly promotions to Black Friday, the biggest peak of the year.</p>
                 <div class="case-stats">
                     <div class="stat">
                         <span class="stat-value">+14%</span>
@@ -473,29 +573,35 @@
                         <span class="stat-label">Annual gain in smartphone market share</span>
                     </div>
                 </div>
-                <div class="case-tags">
-                    <span class="tag">Device &amp; 5G</span>
-                    <span class="tag">Retail Campaigns</span>
-                    <span class="tag">Partner Marketing</span>
-                </div>
-                <a href="#" class="case-link">
-                    View Case Study →
-                </a>
-            </div>
+                <ul class="case-tags">
+                    <li class="tag">Device &amp; 5G</li>
+                    <li class="tag">Retail Campaigns</li>
+                    <li class="tag">Partner Marketing</li>
+                </ul>
+                <details class="case-details">
+                    <summary><span class="summary-more">What I did</span><span class="summary-less">Show less</span></summary>
+                    <ul>
+                        <li>Ran campaigns across the full retail calendar, from weekly tactical promotions to seasonal pushes, with Black Friday the highest-volume peak of the year.</li>
+                        <li>Delivered joint marketing programmes with Samsung, Apple and Google, aligning partner objectives and co-funded budgets with Elisa's commercial targets.</li>
+                        <li>Produced campaign creative from concept to graphics and copy, turning objectives into channel-specific executions and media plans.</li>
+                        <li>Managed Elisa's social media and influencers, keeping brand tone and community engagement consistent.</li>
+                    </ul>
+                </details>
+            </article>
         </div>
     </section>
 
     <!-- Case Study 2 -->
-    <section class="case-study" data-scroll>
+    <section class="case-study" id="oneplus" aria-labelledby="oneplus-title" data-scroll>
         <div class="parallax-bg"></div>
-        <video class="case-bg-video" autoplay muted loop playsinline preload="metadata">
+        <video class="case-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
             <source src="oneplus.mp4" type="video/mp4">
         </video>
         <div class="case-content">
-            <div class="case-text">
+            <article class="case-text">
                 <div class="case-number">02</div>
-                <h2>ONEPLUS</h2>
-                <p>Brought OnePlus HQ and EMEA product launches to the Finnish market and localized them, from creative and copy to web and e-commerce content. I owned OnePlus Finland's social media, built the community with influencers and a platform-specific tone, and ran performance marketing and paid social from targeting and budget to optimisation.</p>
+                <h2 id="oneplus-title">OnePlus</h2>
+                <p>Launching OnePlus devices in Finland and growing the brand's local community, from localized launch creative to social media and paid performance.</p>
                 <div class="case-stats">
                     <div class="stat">
                         <span class="stat-value">~20%</span>
@@ -506,36 +612,41 @@
                         <span class="stat-label">Instagram followers gained</span>
                     </div>
                 </div>
-                <div class="case-tags">
-                    <span class="tag">Product Launches</span>
-                    <span class="tag">Social &amp; Influencers</span>
-                    <span class="tag">Performance Marketing</span>
-                </div>
-                <a href="#" class="case-link">
-                    View Case Study →
-                </a>
-            </div>
+                <ul class="case-tags">
+                    <li class="tag">Product Launches</li>
+                    <li class="tag">Social &amp; Influencers</li>
+                    <li class="tag">Performance Marketing</li>
+                </ul>
+                <details class="case-details">
+                    <summary><span class="summary-more">What I did</span><span class="summary-less">Show less</span></summary>
+                    <ul>
+                        <li>Implemented and localized OnePlus HQ and EMEA product launches for the Finnish market.</li>
+                        <li>Owned OnePlus Finland's social media and built the community with influencers, a platform-specific tone and proactive engagement.</li>
+                        <li>Ran performance marketing and paid social, from targeting and budget to optimisation.</li>
+                        <li>Produced creative and copy, and localized web and e-commerce content across channels.</li>
+                    </ul>
+                </details>
+            </article>
         </div>
     </section>
 
-    <!-- Case Study 3 — no video yet. To add a still image instead:
+    <!-- Case Study 3 — placeholder copy until JB sends the Republic text.
+         Add a "What I did" <details class="case-details"> block like the cases above.
+         To add a still image instead of the pattern:
          <div class="parallax-bg case-bg-image" style="background-image: url('republic.jpg')"></div> -->
-    <section class="case-study" data-scroll>
+    <section class="case-study" id="republic" aria-labelledby="republic-title" data-scroll>
         <div class="parallax-bg"></div>
         <div class="case-content">
-            <div class="case-text">
+            <article class="case-text">
                 <div class="case-number">03</div>
-                <h2>Republic</h2>
+                <h2 id="republic-title">Republic</h2>
                 <p>Creating an award-winning mobile experience for mindful living. The app combines behavioral psychology with elegant design to help users build lasting habits.</p>
-                <div class="case-tags">
-                    <span class="tag">Mobile</span>
-                    <span class="tag">UI/UX</span>
-                    <span class="tag">Product</span>
-                </div>
-                <a href="#" class="case-link">
-                    View Case Study →
-                </a>
-            </div>
+                <ul class="case-tags">
+                    <li class="tag">Mobile</li>
+                    <li class="tag">UI/UX</li>
+                    <li class="tag">Product</li>
+                </ul>
+            </article>
         </div>
     </section>
 
