@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio — Creative Work</title>
+    <title>Johan Björkman · Marketing Strategist</title>
+    <meta name="description" content="Johan Björkman is a marketing strategist who turns product launches into market share, from strategy and creative to social and performance marketing.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Johan Björkman · Marketing Strategist">
+    <meta property="og:description" content="Selected work: product launches, social and performance marketing for Elisa, OnePlus and more.">
+    <meta property="og:url" content="https://cubiie.github.io/Portfolio/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -36,6 +41,8 @@
         /* Hero Section */
         .hero {
             height: 100vh;
+            height: 100svh;
+            min-height: 32rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -73,23 +80,40 @@
             padding: 2rem;
         }
 
+        .hero-eyebrow {
+            font-size: clamp(0.8rem, 1.4vw, 1rem);
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #8DB8E0;
+            margin-bottom: 1.25rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.15s forwards;
+        }
+
         .hero h1 {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(3rem, 10vw, 8rem);
             font-weight: 300;
+            line-height: 1;
             letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.3s forwards;
         }
 
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.5rem);
+        .hero-tagline {
+            max-width: 36rem;
+            margin: 0 auto;
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
             font-weight: 300;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            line-height: 1.6;
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+
+        .hero-tagline strong {
+            font-weight: 500;
         }
 
         .scroll-indicator {
@@ -336,8 +360,9 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
+            .hero-eyebrow,
             .hero h1,
-            .hero p,
+            .hero-tagline,
             .scroll-indicator,
             .scroll-indicator span {
                 animation: none;
@@ -418,10 +443,11 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
+            <p class="hero-eyebrow">Marketing Strategist</p>
             <h1>Johan Björkman</h1>
-            <p>Experienced Marketing Strategist</p>
+            <p class="hero-tagline">I turn <strong>product launches into market share</strong>, from strategy and creative to social and performance marketing.</p>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" aria-hidden="true">
             <span></span>
         </div>
     </section>
