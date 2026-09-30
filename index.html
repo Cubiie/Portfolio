@@ -333,169 +333,6 @@
             text-transform: uppercase;
         }
 
-        /* Case study overlay: opened by "View Case Study", filled from the card's .case-more */
-        .case-more {
-            display: none;
-        }
-
-        .case-modal {
-            width: min(920px, calc(100% - 2rem));
-            max-height: calc(100% - 2rem);
-            margin: auto;
-            padding: 0;
-            border: 1px solid rgba(234, 240, 247, 0.15);
-            border-radius: 4px;
-            background: var(--navy-darkest);
-            color: var(--cream);
-            box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
-            overflow-y: auto;
-            overscroll-behavior: contain;
-        }
-
-        .case-modal::backdrop {
-            background: rgba(7, 23, 42, 0.75);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-        }
-
-        .case-modal[open] {
-            animation: modalIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes modalIn {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        body.modal-open {
-            overflow: hidden;
-        }
-
-        .modal-hero {
-            position: relative;
-            aspect-ratio: 16 / 7;
-            background: var(--navy-dark);
-            overflow: hidden;
-        }
-
-        .modal-hero video {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .modal-hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, var(--navy-darkest) 0%, rgba(7, 23, 42, 0.2) 70%);
-        }
-
-        .modal-heading {
-            position: absolute;
-            left: 3rem;
-            right: 3rem;
-            bottom: 1.5rem;
-            z-index: 1;
-        }
-
-        .modal-heading h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 400;
-            line-height: 1.05;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            z-index: 2;
-            width: 2.75rem;
-            height: 2.75rem;
-            border: 1px solid rgba(234, 240, 247, 0.3);
-            border-radius: 50%;
-            background: rgba(7, 23, 42, 0.6);
-            color: var(--cream);
-            font-size: 1.5rem;
-            line-height: 1;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .modal-close:hover {
-            background: rgba(7, 23, 42, 0.9);
-        }
-
-        .modal-close:focus-visible,
-        .case-link:focus-visible {
-            outline: 2px solid var(--navy-lighter);
-            outline-offset: 4px;
-        }
-
-        .modal-body {
-            padding: 2rem 3rem 3rem;
-        }
-
-        .modal-body > p {
-            font-size: clamp(1rem, 1.4vw, 1.125rem);
-            line-height: 1.8;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-
-        .modal-body .case-stats {
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(234, 240, 247, 0.2);
-        }
-
-        .modal-body h3 {
-            font-size: 0.8125rem;
-            font-weight: 500;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            opacity: 0.7;
-            margin-bottom: 1.25rem;
-        }
-
-        .modal-body ul:not(.case-tags) {
-            list-style: none;
-            display: grid;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .modal-body ul:not(.case-tags) li {
-            position: relative;
-            padding-left: 1.5rem;
-            font-size: 1rem;
-            line-height: 1.7;
-            opacity: 0.9;
-        }
-
-        .modal-body ul:not(.case-tags) li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.8em;
-            width: 0.75rem;
-            height: 1px;
-            background: var(--navy-lighter);
-        }
-
-        .modal-body .case-tags {
-            margin-bottom: 0;
-        }
-
         .case-link {
             display: inline-flex;
             align-items: center;
@@ -509,6 +346,11 @@
             padding-bottom: 0.25rem;
             border-bottom: 1px solid var(--cream);
             transition: all 0.3s ease;
+        }
+
+        .case-link:focus-visible {
+            outline: 2px solid var(--navy-lighter);
+            outline-offset: 4px;
         }
 
         .case-link:hover {
@@ -532,9 +374,6 @@
                 transform: none;
             }
 
-            .case-modal[open] {
-                animation: none;
-            }
         }
 
         /* Footer */
@@ -663,19 +502,6 @@
                 padding: 2rem 1.5rem;
             }
 
-            .modal-hero {
-                aspect-ratio: 4 / 3;
-            }
-
-            .modal-heading {
-                left: 1.5rem;
-                right: 1.5rem;
-            }
-
-            .modal-body {
-                padding: 1.5rem 1.5rem 2rem;
-            }
-
             .footer {
                 padding: 5rem 1.5rem 2rem;
             }
@@ -730,17 +556,7 @@
                     <li class="tag">Retail Campaigns</li>
                     <li class="tag">Partner Marketing</li>
                 </ul>
-                <div class="case-more">
-                    <p>Device and 5G marketing across B2C and B2B, covering the full retail calendar from weekly tactical promotions to Black Friday, the biggest peak of the year. I ran joint programmes with Samsung, Apple and Google, took campaign creative from concept to graphics and copy, and managed Elisa's social media and influencers.</p>
-                    <h3>What I did</h3>
-                    <ul>
-                        <li>Ran campaigns across the full retail calendar, from weekly tactical promotions to seasonal pushes, with Black Friday the highest-volume peak of the year.</li>
-                        <li>Delivered joint marketing programmes with Samsung, Apple and Google, aligning partner objectives and co-funded budgets with Elisa's commercial targets.</li>
-                        <li>Produced campaign creative from concept to graphics and copy, turning objectives into channel-specific executions and media plans.</li>
-                        <li>Managed Elisa's social media and influencers, keeping brand tone and community engagement consistent.</li>
-                    </ul>
-                </div>
-                <a href="#case-elisa" class="case-link" aria-haspopup="dialog">
+                <a href="cases/elisa.html" class="case-link">
                     View Case Study →
                 </a>
             </article>
@@ -772,17 +588,7 @@
                     <li class="tag">Social &amp; Influencers</li>
                     <li class="tag">Performance Marketing</li>
                 </ul>
-                <div class="case-more">
-                    <p>Brought OnePlus HQ and EMEA product launches to the Finnish market and localized them, from creative and copy to web and e-commerce content. I owned OnePlus Finland's social media, built the community with influencers and a platform-specific tone, and ran performance marketing and paid social from targeting and budget to optimisation.</p>
-                    <h3>What I did</h3>
-                    <ul>
-                        <li>Implemented and localized OnePlus HQ and EMEA product launches for the Finnish market.</li>
-                        <li>Owned OnePlus Finland's social media and built the community with influencers, a platform-specific tone and proactive engagement.</li>
-                        <li>Ran performance marketing and paid social, from targeting and budget to optimisation.</li>
-                        <li>Produced creative and copy, and localized web and e-commerce content across channels.</li>
-                    </ul>
-                </div>
-                <a href="#case-oneplus" class="case-link" aria-haspopup="dialog">
+                <a href="cases/oneplus.html" class="case-link">
                     View Case Study →
                 </a>
             </article>
@@ -810,33 +616,12 @@
                     <li class="tag">Influencer Marketing</li>
                     <li class="tag">Events</li>
                 </ul>
-                <div class="case-more">
-                    <h3>What I did</h3>
-                    <ul>
-                        <li>Managed PR and campaign projects for major clients including Sony PlayStation and Huawei.</li>
-                        <li>Helped Sony keep console market leadership and strong sales in Finland through coordinated PR and community work between Nordic stakeholders.</li>
-                        <li>Supported influencer marketing and organised client events.</li>
-                        <li>Produced copy and branded content, and assisted with localisation.</li>
-                    </ul>
-                </div>
-                <a href="#case-republic" class="case-link" aria-haspopup="dialog">
+                <a href="cases/republic.html" class="case-link">
                     View Case Study →
                 </a>
             </article>
         </div>
     </section>
-
-    <!-- Case study overlay (filled by script from the card that opened it) -->
-    <dialog class="case-modal" aria-labelledby="modal-title">
-        <button class="modal-close" type="button" aria-label="Close case study">&times;</button>
-        <div class="modal-hero">
-            <video muted loop playsinline preload="none" aria-hidden="true"></video>
-            <div class="modal-heading">
-                <h2 id="modal-title"></h2>
-            </div>
-        </div>
-        <div class="modal-body"></div>
-    </dialog>
 
     <!-- Footer -->
     <footer class="footer" id="contact">
@@ -938,71 +723,6 @@
         // Initial parallax update
         updateParallax();
 
-        // Case study overlay
-        const modal = document.querySelector('.case-modal');
-        const modalVideo = modal.querySelector('video');
-        const modalBody = modal.querySelector('.modal-body');
-        let lastTrigger = null;
-
-        function openCase(section, trigger) {
-            const card = section.querySelector('.case-text');
-            const more = card.querySelector('.case-more');
-            const bgVideo = section.querySelector('.case-bg-video source');
-
-            modal.querySelector('#modal-title').textContent = card.querySelector('h2').textContent;
-
-            // Overview (the longer text if the card has one), numbers, "What I did", tags
-            const overview = more.querySelector(':scope > p') || card.querySelector(':scope > p');
-            const stats = card.querySelector('.case-stats');
-            modalBody.replaceChildren(overview.cloneNode(true));
-            if (stats) modalBody.append(stats.cloneNode(true));
-            more.querySelectorAll(':scope > :not(p)').forEach(el => modalBody.append(el.cloneNode(true)));
-            modalBody.append(card.querySelector('.case-tags').cloneNode(true));
-
-            if (bgVideo) {
-                modalVideo.src = bgVideo.getAttribute('src');
-                modalVideo.hidden = false;
-                if (!reducedMotion.matches) modalVideo.play().catch(() => {});
-            } else {
-                modalVideo.hidden = true;
-            }
-
-            lastTrigger = trigger || null;
-            document.body.classList.add('modal-open');
-            modal.showModal();
-            modal.scrollTop = 0;
-            history.replaceState(null, '', '#case-' + section.id);
-        }
-
-        modal.addEventListener('close', () => {
-            modalVideo.pause();
-            modalVideo.removeAttribute('src');
-            modalVideo.load();
-            document.body.classList.remove('modal-open');
-            history.replaceState(null, '', location.pathname + location.search);
-            if (lastTrigger) lastTrigger.focus();
-        });
-
-        modal.querySelector('.modal-close').addEventListener('click', () => modal.close());
-
-        // Clicking the dimmed area outside the panel closes it
-        modal.addEventListener('click', e => {
-            if (e.target === modal) modal.close();
-        });
-
-        document.querySelectorAll('.case-link').forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault();
-                openCase(link.closest('.case-study'), link);
-            });
-        });
-
-        // Deep links such as #case-elisa open that case straight away
-        const linked = location.hash.match(/^#case-(\w+)$/);
-        if (linked) {
-            const section = document.getElementById(linked[1]);
-            if (section && section.querySelector('.case-more')) openCase(section);
-        }
     </script>
 </body>
 </html>
