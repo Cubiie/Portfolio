@@ -117,13 +117,35 @@
             font-weight: 500;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         .scroll-indicator {
             position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
             opacity: 0;
             animation: fadeInUp 1s ease-out 1s forwards;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            background-color: rgba(234, 240, 247, 0.1);
+        }
+
+        .scroll-indicator:focus-visible {
+            outline: 2px solid var(--cream);
+            outline-offset: 4px;
         }
 
         .scroll-indicator span {
@@ -447,6 +469,10 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
             .hero-eyebrow,
             .hero h1,
             .hero-tagline,
@@ -617,9 +643,9 @@
             <h1>Johan Björkman</h1>
             <p class="hero-tagline">I help tech brands <strong>win attention and&nbsp;drive&nbsp;sales</strong>, from campaign strategy and creative to social, PR and performance&nbsp;marketing.</p>
         </div>
-        <div class="scroll-indicator" aria-hidden="true">
-            <span></span>
-        </div>
+        <a href="#elisa" class="scroll-indicator" aria-label="Scroll to my work">
+            <span aria-hidden="true"></span>
+        </a>
     </section>
 
     <!-- Case Study 1 -->
