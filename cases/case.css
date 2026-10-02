@@ -1,0 +1,417 @@
+/* Shared styles for the case study pages (cases/*.html) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #EAF0F7;
+    --navy-base: #143556;
+    --navy-darkest: #07172A;
+    --navy-dark: #0E2740;
+    --navy-mid: #1F4A75;
+    --navy-light: #2E6699;
+    --navy-lighter: #4A86BD;
+    --line: rgba(234, 240, 247, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: var(--navy-darkest);
+    color: var(--cream);
+    overflow-x: hidden;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--navy-lighter);
+    outline-offset: 4px;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+/* Top bar */
+.case-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.75rem 4rem;
+}
+
+.case-nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.8125rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.case-nav a:hover {
+    opacity: 1;
+}
+
+.case-nav .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.375rem;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+
+/* Hero */
+.case-hero {
+    position: relative;
+    min-height: 62vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--navy-dark);
+}
+
+.case-hero video,
+.case-hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.case-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--navy-darkest) 0%, rgba(7, 23, 42, 0.55) 45%, rgba(7, 23, 42, 0.35) 100%);
+}
+
+.case-hero .wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-bottom: 4rem;
+}
+
+.eyebrow {
+    font-size: 0.8125rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy-lighter);
+    margin-bottom: 1.25rem;
+}
+
+.case-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 11vw, 8rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+/* "What I did" */
+.case-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    padding: 5rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.case-section h2 {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    padding-top: 0.4rem;
+}
+
+.case-section ul {
+    list-style: none;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.case-section li {
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.case-section li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85em;
+    width: 0.875rem;
+    height: 1px;
+    background: var(--navy-lighter);
+}
+
+/* Gallery: pictures and videos.
+   Each item is a <figure class="media"> holding an <img> or a <video>.
+   Add class "media--wide" to make an item span the full width. */
+.gallery {
+    padding: 4rem 0 5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--navy-dark);
+    border: 1px solid var(--line);
+}
+
+.media--wide {
+    grid-column: 1 / -1;
+}
+
+.media img,
+.media video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.media img {
+    cursor: zoom-in;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.media:hover img {
+    transform: scale(1.02);
+}
+
+.media figcaption {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    opacity: 0.75;
+    border-top: 1px solid var(--line);
+}
+
+/* Empty slot shown until real pictures or videos are added */
+.media--placeholder {
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: dashed;
+    background:
+        linear-gradient(135deg, rgba(74, 134, 189, 0.12) 0%, transparent 100%),
+        var(--navy-dark);
+}
+
+.media--placeholder.media--wide {
+    aspect-ratio: 21 / 9;
+}
+
+.media--placeholder span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    opacity: 0.4;
+}
+
+/* Next case */
+.next-case {
+    display: block;
+    padding: 5rem 0 6rem;
+    border-top: 1px solid var(--line);
+    color: var(--cream);
+    text-decoration: none;
+}
+
+.next-case .eyebrow {
+    margin-bottom: 0.75rem;
+}
+
+.next-case strong {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    transition: gap 0.3s ease, opacity 0.3s ease;
+}
+
+.next-case:hover strong {
+    gap: 1.75rem;
+    opacity: 0.8;
+}
+
+/* Contact */
+.case-footer {
+    padding: 5rem 0 3rem;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, rgba(46, 102, 153, 0.25) 0%, transparent 60%), var(--navy-darkest);
+    border-top: 1px solid var(--line);
+}
+
+.case-footer h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.footer-cta {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid rgba(234, 240, 247, 0.4);
+    border-radius: 999px;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 1.125rem;
+    letter-spacing: 0.03em;
+    overflow-wrap: anywhere;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.footer-cta:hover,
+.footer-cta:focus-visible {
+    background: var(--cream);
+    color: var(--navy-darkest);
+}
+
+.footer-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.footer-links a:hover {
+    color: var(--navy-lighter);
+    opacity: 1;
+}
+
+/* Lightbox for gallery pictures */
+.lightbox {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 2rem;
+    border: 0;
+    background: rgba(7, 23, 42, 0.94);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox[open] {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.lightbox button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid rgba(234, 240, 247, 0.3);
+    border-radius: 50%;
+    background: rgba(7, 23, 42, 0.6);
+    color: var(--cream);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .media img,
+    .next-case strong {
+        transition: none;
+    }
+}
+
+@media (max-width: 968px) {
+    .wrap {
+        padding: 0 1.25rem;
+    }
+
+    .case-nav {
+        padding: 1.25rem;
+    }
+
+    .case-hero {
+        min-height: 50vh;
+    }
+
+    .case-hero .wrap {
+        padding-bottom: 2.5rem;
+    }
+
+
+    .case-section {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 3rem 0;
+    }
+
+    .gallery {
+        padding: 2rem 0 3rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .next-case {
+        padding: 3.5rem 0 4rem;
+    }
+
+    .lightbox {
+        padding: 1rem;
+    }
+}

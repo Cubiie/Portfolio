@@ -334,98 +334,6 @@
             text-transform: uppercase;
         }
 
-        /* "What I did": expandable list of responsibilities inside the card */
-        .case-details summary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--cream);
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            font-size: 0.875rem;
-            padding-bottom: 0.25rem;
-            border-bottom: 1px solid var(--cream);
-            cursor: pointer;
-            list-style: none;
-            transition: gap 0.3s ease, opacity 0.3s ease;
-        }
-
-        .case-details summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .case-details summary::after {
-            content: '+';
-            font-size: 1.125rem;
-            line-height: 1;
-            font-weight: 300;
-        }
-
-        .case-details[open] summary::after {
-            content: '\2212';
-        }
-
-        .case-details summary:hover {
-            gap: 1rem;
-            opacity: 0.7;
-        }
-
-        .case-details summary:focus-visible {
-            outline: 2px solid var(--navy-lighter);
-            outline-offset: 4px;
-        }
-
-        .case-details .summary-less,
-        .case-details[open] .summary-more {
-            display: none;
-        }
-
-        .case-details[open] .summary-less {
-            display: inline;
-        }
-
-        .case-details ul {
-            list-style: none;
-            margin-top: 1.5rem;
-            display: grid;
-            gap: 1rem;
-        }
-
-        .case-details li {
-            position: relative;
-            padding-left: 1.5rem;
-            font-size: 0.9375rem;
-            line-height: 1.7;
-            color: var(--cream);
-            opacity: 0.9;
-        }
-
-        .case-details li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.8em;
-            width: 0.75rem;
-            height: 1px;
-            background: var(--navy-lighter);
-        }
-
-        .case-details[open] ul {
-            animation: detailsIn 0.4s ease-out;
-        }
-
-        @keyframes detailsIn {
-            from {
-                opacity: 0;
-                transform: translateY(-6px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         .case-link {
             display: inline-flex;
             align-items: center;
@@ -439,6 +347,11 @@
             padding-bottom: 0.25rem;
             border-bottom: 1px solid var(--cream);
             transition: all 0.3s ease;
+        }
+
+        .case-link:focus-visible {
+            outline: 2px solid var(--navy-lighter);
+            outline-offset: 4px;
         }
 
         .case-link:hover {
@@ -462,9 +375,6 @@
                 transform: none;
             }
 
-            .case-details[open] ul {
-                animation: none;
-            }
         }
 
         /* Footer */
@@ -647,15 +557,9 @@
                     <li class="tag">Retail Campaigns</li>
                     <li class="tag">Partner Marketing</li>
                 </ul>
-                <details class="case-details">
-                    <summary><span class="summary-more">What I did</span><span class="summary-less">Show less</span></summary>
-                    <ul>
-                        <li>Ran campaigns across the full retail calendar, from weekly tactical promotions to seasonal pushes, with Black Friday the highest-volume peak of the year.</li>
-                        <li>Delivered joint marketing programmes with Samsung, Apple and Google, aligning partner objectives and co-funded budgets with Elisa's commercial targets.</li>
-                        <li>Produced campaign creative from concept to graphics and copy, turning objectives into channel-specific executions and media plans.</li>
-                        <li>Managed Elisa's social media and influencers, keeping brand tone and community engagement consistent.</li>
-                    </ul>
-                </details>
+                <a href="cases/elisa.html" class="case-link">
+                    View Case Study →
+                </a>
             </article>
         </div>
     </section>
@@ -685,15 +589,9 @@
                     <li class="tag">Social &amp; Influencers</li>
                     <li class="tag">Performance Marketing</li>
                 </ul>
-                <details class="case-details">
-                    <summary><span class="summary-more">What I did</span><span class="summary-less">Show less</span></summary>
-                    <ul>
-                        <li>Implemented and localized OnePlus HQ and EMEA product launches for the Finnish market.</li>
-                        <li>Owned OnePlus Finland's social media and built the community with influencers, a platform-specific tone and proactive engagement.</li>
-                        <li>Ran performance marketing and paid social, from targeting and budget to optimisation.</li>
-                        <li>Produced creative and copy, and localized web and e-commerce content across channels.</li>
-                    </ul>
-                </details>
+                <a href="cases/oneplus.html" class="case-link">
+                    View Case Study →
+                </a>
             </article>
         </div>
     </section>
@@ -719,15 +617,9 @@
                     <li class="tag">Influencer Marketing</li>
                     <li class="tag">Events</li>
                 </ul>
-                <details class="case-details">
-                    <summary><span class="summary-more">What I did</span><span class="summary-less">Show less</span></summary>
-                    <ul>
-                        <li>Managed PR and campaign projects for major clients including Sony PlayStation and Huawei.</li>
-                        <li>Helped Sony keep console market leadership and strong sales in Finland through coordinated PR and community work between Nordic stakeholders.</li>
-                        <li>Supported influencer marketing and organised client events.</li>
-                        <li>Produced copy and branded content, and assisted with localisation.</li>
-                    </ul>
-                </details>
+                <a href="cases/republic.html" class="case-link">
+                    View Case Study →
+                </a>
             </article>
         </div>
     </section>
@@ -831,6 +723,7 @@
 
         // Initial parallax update
         updateParallax();
+
     </script>
 </body>
 </html>
