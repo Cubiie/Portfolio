@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Johan Björkman · Marketing Strategist</title>
-    <meta name="description" content="Johan Björkman is a marketing strategist who turns product launches into market share, from strategy and creative to social and performance marketing.">
+    <title>Johan Björkman · Creative AI Marketing Strategist</title>
+    <meta name="description" content="Johan Björkman is a creative AI marketing strategist who helps brands win attention and drive sales, from campaign strategy and creative to social, PR and performance marketing.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Johan Björkman · Marketing Strategist">
-    <meta property="og:description" content="Selected work: product launches, social and performance marketing for Elisa, OnePlus and more.">
+    <meta property="og:title" content="Johan Björkman · Creative AI Marketing Strategist">
+    <meta property="og:description" content="Selected work for Elisa, OnePlus and Republic: retail campaigns, launches, social, PR and performance marketing.">
     <meta property="og:url" content="https://cubiie.github.io/Portfolio/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,6 +87,7 @@
             text-transform: uppercase;
             color: #8DB8E0;
             margin-bottom: 1.25rem;
+            text-wrap: balance;
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.15s forwards;
         }
@@ -103,11 +104,12 @@
         }
 
         .hero-tagline {
-            max-width: 36rem;
+            max-width: 46rem;
             margin: 0 auto;
             font-size: clamp(1.05rem, 2vw, 1.35rem);
             font-weight: 300;
             line-height: 1.6;
+            text-wrap: balance;
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.6s forwards;
         }
@@ -116,13 +118,35 @@
             font-weight: 500;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         .scroll-indicator {
             position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
             opacity: 0;
             animation: fadeInUp 1s ease-out 1s forwards;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            background-color: rgba(234, 240, 247, 0.1);
+        }
+
+        .scroll-indicator:focus-visible {
+            outline: 2px solid var(--cream);
+            outline-offset: 4px;
         }
 
         .scroll-indicator span {
@@ -161,8 +185,10 @@
         /* Case Study Section
            Every case is a full-bleed background (video, image or navy pattern)
            under a navy overlay, with the text in a frosted-glass card. */
+        /* 16:9 like the case videos, so the full frame shows on desktop
+           and logos near the edges aren't cropped */
         .case-study {
-            min-height: 100vh;
+            min-height: 56.25vw;
             position: relative;
             display: flex;
             align-items: center;
@@ -222,9 +248,7 @@
         .case-content {
             position: relative;
             z-index: 2;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem;
+            padding: 4rem clamp(2rem, 4vw, 5rem);
             width: 100%;
             display: grid;
             grid-template-columns: 1fr;
@@ -359,6 +383,10 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
             .hero-eyebrow,
             .hero h1,
             .hero-tagline,
@@ -489,8 +517,18 @@
             color: var(--cream);
         }
 
+        @media (max-width: 480px) {
+            .hero-eyebrow {
+                letter-spacing: 0.14em;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
+            .case-study {
+                min-height: 100vh;
+            }
+
             .case-content,
             .case-study:nth-child(odd of .case-study) .case-content {
                 padding: 3rem 1.25rem;
@@ -522,13 +560,13 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <p class="hero-eyebrow">Marketing Strategist</p>
+            <p class="hero-eyebrow">Creative AI Marketing Strategist</p>
             <h1>Johan Björkman</h1>
-            <p class="hero-tagline">I turn <strong>product launches into market share</strong>, from strategy and creative to social and performance marketing.</p>
+            <p class="hero-tagline">I help brands <strong>win attention and&nbsp;drive&nbsp;sales</strong>, from campaign strategy and creative to social, PR and performance&nbsp;marketing.</p>
         </div>
-        <div class="scroll-indicator" aria-hidden="true">
-            <span></span>
-        </div>
+        <a href="#elisa" class="scroll-indicator" aria-label="Scroll to my work">
+            <span aria-hidden="true"></span>
+        </a>
     </section>
 
     <!-- Case Study 1 -->
