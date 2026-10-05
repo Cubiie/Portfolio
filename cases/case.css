@@ -123,6 +123,13 @@ button:focus-visible {
     margin-bottom: 1.25rem;
 }
 
+.case-role {
+    margin-top: 1rem;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    letter-spacing: 0.06em;
+    opacity: 0.85;
+}
+
 .case-hero h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(3.5rem, 11vw, 8rem);
@@ -161,6 +168,13 @@ button:focus-visible {
     font-size: 1.0625rem;
     line-height: 1.7;
     opacity: 0.9;
+}
+
+.case-section p {
+    font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 2rem;
 }
 
 .case-section li::before {
@@ -242,6 +256,54 @@ button:focus-visible {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.25rem, 2.5vw, 1.75rem);
     opacity: 0.4;
+}
+
+/* Campaigns: a heading, an optional full-width item, then a masonry of
+   pictures and videos that keeps each file's own shape */
+.campaign {
+    padding: 4rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.campaign-header {
+    margin-bottom: 2rem;
+}
+
+.campaign-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.campaign-header p {
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy-lighter);
+}
+
+.campaign-feature {
+    margin-bottom: 1.5rem;
+}
+
+.campaign-feature:last-child {
+    margin: 1.5rem 0 0;
+}
+
+.masonry {
+    columns: 3;
+    column-gap: 1.5rem;
+}
+
+.masonry .media {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+}
+
+.media video {
+    background: #000;
 }
 
 /* Next case */
@@ -374,6 +436,12 @@ button:focus-visible {
     }
 }
 
+@media (max-width: 1100px) {
+    .masonry {
+        columns: 2;
+    }
+}
+
 @media (max-width: 968px) {
     .wrap {
         padding: 0 1.25rem;
@@ -407,11 +475,26 @@ button:focus-visible {
         gap: 1rem;
     }
 
+    .campaign {
+        padding: 3rem 0;
+    }
+
+    .masonry .media,
+    .campaign-feature {
+        margin-bottom: 1rem;
+    }
+
     .next-case {
         padding: 3.5rem 0 4rem;
     }
 
     .lightbox {
         padding: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .masonry {
+        columns: 1;
     }
 }
