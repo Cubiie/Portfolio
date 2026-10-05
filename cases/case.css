@@ -16,20 +16,20 @@
     --line: rgba(11, 37, 69, 0.12);
     /* Bright palette (shared with the front page) */
     --ink: #0B2545;
-    --paper: #F3F9FF;
-    --blue: #0A6CFF;
+    --paper: #F5F7FA;
+    --blue: #1F5FBF;
     --azure: #1E90FF;
     --cyan: #3DDCFF;
-    --sky: #A8E4FF;
+    --sky: #B7CDEB;
     --aqua: #5FE3E0;
     --accent: var(--blue);
     --accent-soft: rgba(10, 108, 255, 0.12);
 }
 
 /* Each case page has its own accent colour */
-.case-elisa { --accent: #0A6CFF; --accent-soft: rgba(10, 108, 255, 0.12); }
-.case-oneplus { --accent: #0086C9; --accent-soft: rgba(0, 134, 201, 0.12); }
-.case-republic { --accent: #3A4FE0; --accent-soft: rgba(58, 79, 224, 0.12); }
+.case-elisa { --accent: #1F5FBF; --accent-soft: rgba(31, 95, 191, 0.1); }
+.case-oneplus { --accent: #1A6E9E; --accent-soft: rgba(26, 110, 158, 0.1); }
+.case-republic { --accent: #34489E; --accent-soft: rgba(52, 72, 158, 0.1); }
 
 html {
     scroll-behavior: smooth;
@@ -105,7 +105,7 @@ button:focus-visible {
     align-items: flex-end;
     overflow: hidden;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #0047E0 0%, var(--blue) 50%, #18A8F0 100%);
+    background: linear-gradient(135deg, #0D2B5C 0%, #17468F 55%, #2B6CB8 100%);
 }
 
 .case-hero video,
@@ -225,7 +225,7 @@ button:focus-visible {
 .media {
     position: relative;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 6px;
     background: #FFFFFF;
     border: 1px solid var(--line);
     box-shadow: 0 12px 30px rgba(11, 37, 69, 0.08);
@@ -267,7 +267,7 @@ button:focus-visible {
     justify-content: center;
     border-style: dashed;
     background:
-        linear-gradient(135deg, var(--accent-soft) 0%, rgba(61, 220, 255, 0.14) 100%),
+        linear-gradient(135deg, var(--accent-soft) 0%, rgba(31, 95, 191, 0.04) 100%),
         #FFFFFF;
     border-color: var(--accent);
 }
@@ -367,9 +367,9 @@ button:focus-visible {
     text-align: center;
     color: #FFFFFF;
     background:
-        radial-gradient(circle at 10% 10%, rgba(95, 227, 224, 0.4) 0%, transparent 40%),
-        radial-gradient(circle at 92% 0%, rgba(61, 220, 255, 0.55) 0%, transparent 40%),
-        linear-gradient(120deg, #0038C7 0%, var(--blue) 55%, #0A84D0 100%);
+        radial-gradient(circle at 10% 10%, rgba(120, 170, 230, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 92% 0%, rgba(90, 160, 230, 0.22) 0%, transparent 45%),
+        linear-gradient(120deg, #0D2B5C 0%, #17468F 55%, #2463B4 100%);
 }
 
 .case-footer h2 {
