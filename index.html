@@ -335,6 +335,22 @@
             opacity: 0.75;
         }
 
+        /* A single stat with its label beside the number instead of under it */
+        .stat--inline {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .stat--inline .stat-value {
+            margin-bottom: 0;
+        }
+
+        .stat--inline .stat-label {
+            max-width: 16rem;
+        }
+
         .case-tags {
             display: flex;
             flex-wrap: wrap;
@@ -644,7 +660,7 @@
                 <h2 id="republic-title">Republic</h2>
                 <p>PR, influencer and campaign work for major tech and gaming clients, including Sony PlayStation and Huawei, coordinated across Nordic stakeholders.</p>
                 <div class="case-stats">
-                    <div class="stat">
+                    <div class="stat stat--inline">
                         <span class="stat-value">#1</span>
                         <span class="stat-label">Console market leadership kept for PlayStation in Finland</span>
                     </div>
