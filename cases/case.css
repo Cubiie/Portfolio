@@ -13,8 +13,23 @@
     --navy-mid: #1F4A75;
     --navy-light: #2E6699;
     --navy-lighter: #4A86BD;
-    --line: rgba(234, 240, 247, 0.15);
+    --line: rgba(30, 20, 66, 0.12);
+    /* Bright palette (shared with the front page) */
+    --ink: #1E1442;
+    --paper: #FFF8F2;
+    --violet: #5B3DF5;
+    --pink: #EC3F8C;
+    --orange: #FF8A3D;
+    --sun: #FFC93C;
+    --teal: #19C3B1;
+    --accent: var(--violet);
+    --accent-soft: rgba(91, 61, 245, 0.12);
 }
+
+/* Each case page has its own accent colour */
+.case-elisa { --accent: #0A6CFF; --accent-soft: rgba(10, 108, 255, 0.12); }
+.case-oneplus { --accent: #E5162B; --accent-soft: rgba(229, 22, 43, 0.1); }
+.case-republic { --accent: #7A35F0; --accent-soft: rgba(122, 53, 240, 0.12); }
 
 html {
     scroll-behavior: smooth;
@@ -22,8 +37,8 @@ html {
 
 body {
     font-family: 'Work Sans', sans-serif;
-    background: var(--navy-darkest);
-    color: var(--cream);
+    background: var(--paper);
+    color: var(--ink);
     overflow-x: hidden;
 }
 
@@ -38,7 +53,7 @@ body {
 
 a:focus-visible,
 button:focus-visible {
-    outline: 2px solid var(--navy-lighter);
+    outline: 2px solid var(--accent);
     outline-offset: 4px;
 }
 
@@ -89,7 +104,8 @@ button:focus-visible {
     display: flex;
     align-items: flex-end;
     overflow: hidden;
-    background: var(--navy-dark);
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #2A1A7A 0%, var(--violet) 45%, #B9338F 100%);
 }
 
 .case-hero video,
@@ -105,7 +121,7 @@ button:focus-visible {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, var(--navy-darkest) 0%, rgba(7, 23, 42, 0.55) 45%, rgba(7, 23, 42, 0.35) 100%);
+    background: linear-gradient(to top, rgba(30, 20, 66, 0.85) 0%, rgba(30, 20, 66, 0.25) 55%, rgba(30, 20, 66, 0.35) 100%);
 }
 
 .case-hero .wrap {
@@ -119,8 +135,13 @@ button:focus-visible {
     font-size: 0.8125rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--navy-lighter);
+    font-weight: 500;
+    color: var(--accent);
     margin-bottom: 1.25rem;
+}
+
+.case-hero .eyebrow {
+    color: var(--sun);
 }
 
 .case-role {
@@ -152,7 +173,7 @@ button:focus-visible {
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    opacity: 0.7;
+    color: var(--accent);
     padding-top: 0.4rem;
 }
 
@@ -183,8 +204,9 @@ button:focus-visible {
     left: 0;
     top: 0.85em;
     width: 0.875rem;
-    height: 1px;
-    background: var(--navy-lighter);
+    height: 3px;
+    border-radius: 2px;
+    background: var(--accent);
 }
 
 /* Gallery: pictures and videos.
@@ -203,9 +225,10 @@ button:focus-visible {
 .media {
     position: relative;
     overflow: hidden;
-    border-radius: 4px;
-    background: var(--navy-dark);
+    border-radius: 12px;
+    background: #FFFFFF;
     border: 1px solid var(--line);
+    box-shadow: 0 12px 30px rgba(30, 20, 66, 0.08);
 }
 
 .media--wide {
@@ -244,8 +267,9 @@ button:focus-visible {
     justify-content: center;
     border-style: dashed;
     background:
-        linear-gradient(135deg, rgba(74, 134, 189, 0.12) 0%, transparent 100%),
-        var(--navy-dark);
+        linear-gradient(135deg, var(--accent-soft) 0%, rgba(255, 138, 61, 0.12) 100%),
+        #FFFFFF;
+    border-color: var(--accent);
 }
 
 .media--placeholder.media--wide {
@@ -255,7 +279,8 @@ button:focus-visible {
 .media--placeholder span {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    opacity: 0.4;
+    color: var(--accent);
+    opacity: 0.6;
 }
 
 /* Campaigns: a heading, an optional full-width item, then a masonry of
@@ -281,7 +306,8 @@ button:focus-visible {
     font-size: 0.875rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--navy-lighter);
+    font-weight: 500;
+    color: var(--accent);
 }
 
 .campaign-feature {
@@ -311,7 +337,7 @@ button:focus-visible {
     display: block;
     padding: 5rem 0 6rem;
     border-top: 1px solid var(--line);
-    color: var(--cream);
+    color: var(--ink);
     text-decoration: none;
 }
 
@@ -327,20 +353,23 @@ button:focus-visible {
     font-size: clamp(2.5rem, 7vw, 5rem);
     font-weight: 300;
     line-height: 1.1;
-    transition: gap 0.3s ease, opacity 0.3s ease;
+    transition: gap 0.3s ease, color 0.3s ease;
 }
 
 .next-case:hover strong {
     gap: 1.75rem;
-    opacity: 0.8;
+    color: var(--accent);
 }
 
 /* Contact */
 .case-footer {
     padding: 5rem 0 3rem;
     text-align: center;
-    background: radial-gradient(circle at 50% 0%, rgba(46, 102, 153, 0.25) 0%, transparent 60%), var(--navy-darkest);
-    border-top: 1px solid var(--line);
+    color: #FFFFFF;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(25, 195, 177, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 92% 0%, rgba(255, 138, 61, 0.6) 0%, transparent 40%),
+        linear-gradient(120deg, #4B2FE0 0%, #8A35D8 50%, #D42F7C 100%);
 }
 
 .case-footer h2 {
@@ -353,34 +382,39 @@ button:focus-visible {
 .footer-cta {
     display: inline-block;
     padding: 1rem 2.5rem;
-    border: 1px solid rgba(234, 240, 247, 0.4);
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
     border-radius: 999px;
-    color: var(--cream);
+    color: var(--ink);
+    font-weight: 500;
+    box-shadow: 0 14px 34px rgba(30, 20, 66, 0.3);
     text-decoration: none;
     font-size: 1.125rem;
     letter-spacing: 0.03em;
     overflow-wrap: anywhere;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     margin-bottom: 2rem;
 }
 
 .footer-cta:hover,
 .footer-cta:focus-visible {
-    background: var(--cream);
-    color: var(--navy-darkest);
+    background: var(--ink);
+    color: #FFFFFF;
+    border-color: var(--ink);
+    transform: translateY(-2px);
 }
 
 .footer-links a {
-    color: var(--cream);
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 0.9375rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .footer-links a:hover {
-    color: var(--navy-lighter);
+    color: var(--sun);
     opacity: 1;
 }
 
@@ -393,7 +427,7 @@ button:focus-visible {
     margin: 0;
     padding: 2rem;
     border: 0;
-    background: rgba(7, 23, 42, 0.94);
+    background: rgba(30, 20, 66, 0.94);
     display: none;
     align-items: center;
     justify-content: center;
@@ -418,7 +452,7 @@ button:focus-visible {
     height: 2.75rem;
     border: 1px solid rgba(234, 240, 247, 0.3);
     border-radius: 50%;
-    background: rgba(7, 23, 42, 0.6);
+    background: rgba(30, 20, 66, 0.6);
     color: var(--cream);
     font-size: 1.5rem;
     line-height: 1;
