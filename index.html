@@ -30,20 +30,20 @@
             --navy-lighter: #4A86BD;
             --soft-black: #07172A;
             /* Bright palette */
-            --ink: #1E1442;
-            --paper: #FFF8F2;
-            --violet: #5B3DF5;
-            --pink: #EC3F8C;
-            --orange: #FF8A3D;
-            --sun: #FFC93C;
-            --teal: #19C3B1;
-            --brand-gradient: linear-gradient(120deg, var(--violet) 0%, var(--pink) 55%, var(--orange) 100%);
-            --accent: var(--violet);
+            --ink: #0B2545;
+            --paper: #F3F9FF;
+            --blue: #0A6CFF;
+            --azure: #1E90FF;
+            --cyan: #3DDCFF;
+            --sky: #A8E4FF;
+            --aqua: #5FE3E0;
+            --brand-gradient: linear-gradient(120deg, #0038C7 0%, var(--blue) 55%, #0A84D0 100%);
+            --accent: var(--blue);
         }
 
         #elisa { --accent: #0A6CFF; --accent-soft: rgba(10, 108, 255, 0.12); --tint: rgba(10, 108, 255, 0.18); }
-        #oneplus { --accent: #E5162B; --accent-soft: rgba(229, 22, 43, 0.1); --tint: rgba(236, 63, 140, 0.18); }
-        #republic { --accent: #7A35F0; --accent-soft: rgba(122, 53, 240, 0.12); --tint: rgba(255, 138, 61, 0.18); }
+        #oneplus { --accent: #0086C9; --accent-soft: rgba(0, 134, 201, 0.12); --tint: rgba(61, 220, 255, 0.2); }
+        #republic { --accent: #3A4FE0; --accent-soft: rgba(58, 79, 224, 0.12); --tint: rgba(58, 79, 224, 0.18); }
 
         body {
             font-family: 'Work Sans', sans-serif;
@@ -70,7 +70,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #2A1A7A 0%, var(--violet) 45%, #B9338F 100%);
+            background: linear-gradient(135deg, #0047E0 0%, var(--blue) 50%, #18A8F0 100%);
             transform: translateZ(0);
         }
 
@@ -82,10 +82,10 @@
             width: 100%;
             height: 100%;
             background-image:
-                radial-gradient(circle at 12% 18%, rgba(25, 195, 177, 0.55) 0%, transparent 38%),
-                radial-gradient(circle at 88% 85%, rgba(255, 138, 61, 0.7) 0%, transparent 42%),
-                radial-gradient(circle at 85% 10%, rgba(255, 201, 60, 0.45) 0%, transparent 30%),
-                radial-gradient(circle at 15% 95%, rgba(236, 63, 140, 0.55) 0%, transparent 40%);
+                radial-gradient(circle at 12% 18%, rgba(95, 227, 224, 0.5) 0%, transparent 38%),
+                radial-gradient(circle at 88% 85%, rgba(61, 220, 255, 0.65) 0%, transparent 42%),
+                radial-gradient(circle at 85% 10%, rgba(168, 228, 255, 0.45) 0%, transparent 30%),
+                radial-gradient(circle at 15% 95%, rgba(30, 144, 255, 0.6) 0%, transparent 40%);
         }
 
         .hero-content {
@@ -101,7 +101,7 @@
             font-weight: 400;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--sun);
+            color: var(--sky);
             margin-bottom: 1.25rem;
             text-wrap: balance;
             opacity: 0;
@@ -115,7 +115,7 @@
             line-height: 1;
             letter-spacing: -0.02em;
             margin-bottom: 1.75rem;
-            text-shadow: 0 4px 30px rgba(30, 20, 66, 0.35);
+            text-shadow: 0 4px 30px rgba(11, 37, 69, 0.35);
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.3s forwards;
         }
@@ -134,7 +134,7 @@
         .hero-tagline strong {
             font-weight: 500;
             color: #FFFFFF;
-            background: linear-gradient(transparent 62%, rgba(255, 138, 61, 0.65) 62%);
+            background: linear-gradient(transparent 62%, rgba(61, 220, 255, 0.6) 62%);
         }
 
         html {
@@ -230,13 +230,13 @@
         }
 
         .case-study:nth-child(3n + 2 of .case-study) .parallax-bg {
-            background-color: #FFE1EA;
-            background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%23FFE1EA" width="100" height="100"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="%23EC3F8C" stroke-opacity="0.25" fill="none" stroke-width="2"/></svg>');
+            background-color: #D9F3FF;
+            background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%23D9F3FF" width="100" height="100"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="%230086C9" stroke-opacity="0.25" fill="none" stroke-width="2"/></svg>');
         }
 
         .case-study:nth-child(3n of .case-study) .parallax-bg {
-            background-color: #FFEBD9;
-            background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%23FFEBD9" width="100" height="100"/><rect fill="%23FF8A3D" fill-opacity="0.2" x="10" y="10" width="30" height="30"/></svg>');
+            background-color: #E3E8FF;
+            background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%23E3E8FF" width="100" height="100"/><rect fill="%233A4FE0" fill-opacity="0.15" x="10" y="10" width="30" height="30"/></svg>');
         }
 
         .parallax-bg.case-bg-image {
@@ -288,7 +288,7 @@
             border: 1px solid rgba(255, 255, 255, 0.7);
             border-top: 6px solid var(--accent);
             border-radius: 12px;
-            box-shadow: 0 30px 80px rgba(30, 20, 66, 0.25);
+            box-shadow: 0 30px 80px rgba(11, 37, 69, 0.25);
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
@@ -333,7 +333,7 @@
             gap: 1.5rem;
             margin-bottom: 2rem;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(30, 20, 66, 0.12);
+            border-top: 1px solid rgba(11, 37, 69, 0.12);
         }
 
         .stat-value {
@@ -369,7 +369,7 @@
         /* Tags are labels, not buttons, so they have no hover state */
         .tag {
             padding: 0.4rem 1rem;
-            background: var(--accent-soft, rgba(91, 61, 245, 0.1));
+            background: var(--accent-soft, rgba(10, 108, 255, 0.1));
             border-radius: 999px;
             color: var(--accent);
             font-weight: 500;
@@ -391,7 +391,7 @@
             font-size: 0.875rem;
             padding: 0.85rem 1.5rem;
             border-radius: 999px;
-            box-shadow: 0 10px 24px var(--accent-soft, rgba(91, 61, 245, 0.2));
+            box-shadow: 0 10px 24px var(--accent-soft, rgba(10, 108, 255, 0.2));
             transition: all 0.3s ease;
         }
 
@@ -403,7 +403,7 @@
         .case-link:hover {
             gap: 1rem;
             transform: translateY(-2px);
-            box-shadow: 0 14px 30px rgba(30, 20, 66, 0.25);
+            box-shadow: 0 14px 30px rgba(11, 37, 69, 0.25);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -432,7 +432,7 @@
         .footer {
             padding: 8rem 4rem 3rem;
             text-align: center;
-            background: linear-gradient(120deg, #4B2FE0 0%, #8A35D8 50%, #D42F7C 100%);
+            background: linear-gradient(120deg, #0038C7 0%, var(--blue) 55%, #0A84D0 100%);
             color: #FFFFFF;
             position: relative;
             overflow: hidden;
@@ -443,8 +443,8 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(circle at 10% 10%, rgba(25, 195, 177, 0.45) 0%, transparent 40%),
-                radial-gradient(circle at 92% 0%, rgba(255, 138, 61, 0.6) 0%, transparent 40%);
+                radial-gradient(circle at 10% 10%, rgba(95, 227, 224, 0.4) 0%, transparent 40%),
+                radial-gradient(circle at 92% 0%, rgba(61, 220, 255, 0.55) 0%, transparent 40%);
             pointer-events: none;
         }
 
@@ -456,7 +456,7 @@
             font-size: 0.8125rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--sun);
+            color: var(--sky);
             font-weight: 500;
             margin-bottom: 1.5rem;
         }
@@ -485,7 +485,7 @@
             border-radius: 999px;
             color: var(--ink);
             font-weight: 500;
-            box-shadow: 0 14px 34px rgba(30, 20, 66, 0.3);
+            box-shadow: 0 14px 34px rgba(11, 37, 69, 0.3);
             text-decoration: none;
             font-size: 1.125rem;
             letter-spacing: 0.03em;
@@ -522,7 +522,7 @@
 
         .footer-links a:hover,
         .footer-links a:focus-visible {
-            color: var(--sun);
+            color: var(--sky);
             opacity: 1;
         }
 
@@ -545,7 +545,7 @@
 
         .footer-bottom a:hover,
         .footer-bottom a:focus-visible {
-            color: var(--sun);
+            color: var(--sky);
         }
 
         @media (max-width: 480px) {

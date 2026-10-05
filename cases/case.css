@@ -13,23 +13,23 @@
     --navy-mid: #1F4A75;
     --navy-light: #2E6699;
     --navy-lighter: #4A86BD;
-    --line: rgba(30, 20, 66, 0.12);
+    --line: rgba(11, 37, 69, 0.12);
     /* Bright palette (shared with the front page) */
-    --ink: #1E1442;
-    --paper: #FFF8F2;
-    --violet: #5B3DF5;
-    --pink: #EC3F8C;
-    --orange: #FF8A3D;
-    --sun: #FFC93C;
-    --teal: #19C3B1;
-    --accent: var(--violet);
-    --accent-soft: rgba(91, 61, 245, 0.12);
+    --ink: #0B2545;
+    --paper: #F3F9FF;
+    --blue: #0A6CFF;
+    --azure: #1E90FF;
+    --cyan: #3DDCFF;
+    --sky: #A8E4FF;
+    --aqua: #5FE3E0;
+    --accent: var(--blue);
+    --accent-soft: rgba(10, 108, 255, 0.12);
 }
 
 /* Each case page has its own accent colour */
 .case-elisa { --accent: #0A6CFF; --accent-soft: rgba(10, 108, 255, 0.12); }
-.case-oneplus { --accent: #E5162B; --accent-soft: rgba(229, 22, 43, 0.1); }
-.case-republic { --accent: #7A35F0; --accent-soft: rgba(122, 53, 240, 0.12); }
+.case-oneplus { --accent: #0086C9; --accent-soft: rgba(0, 134, 201, 0.12); }
+.case-republic { --accent: #3A4FE0; --accent-soft: rgba(58, 79, 224, 0.12); }
 
 html {
     scroll-behavior: smooth;
@@ -105,7 +105,7 @@ button:focus-visible {
     align-items: flex-end;
     overflow: hidden;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #2A1A7A 0%, var(--violet) 45%, #B9338F 100%);
+    background: linear-gradient(135deg, #0047E0 0%, var(--blue) 50%, #18A8F0 100%);
 }
 
 .case-hero video,
@@ -121,7 +121,7 @@ button:focus-visible {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(30, 20, 66, 0.85) 0%, rgba(30, 20, 66, 0.25) 55%, rgba(30, 20, 66, 0.35) 100%);
+    background: linear-gradient(to top, rgba(11, 37, 69, 0.85) 0%, rgba(11, 37, 69, 0.25) 55%, rgba(11, 37, 69, 0.35) 100%);
 }
 
 .case-hero .wrap {
@@ -141,7 +141,7 @@ button:focus-visible {
 }
 
 .case-hero .eyebrow {
-    color: var(--sun);
+    color: var(--sky);
 }
 
 .case-role {
@@ -228,7 +228,7 @@ button:focus-visible {
     border-radius: 12px;
     background: #FFFFFF;
     border: 1px solid var(--line);
-    box-shadow: 0 12px 30px rgba(30, 20, 66, 0.08);
+    box-shadow: 0 12px 30px rgba(11, 37, 69, 0.08);
 }
 
 .media--wide {
@@ -267,7 +267,7 @@ button:focus-visible {
     justify-content: center;
     border-style: dashed;
     background:
-        linear-gradient(135deg, var(--accent-soft) 0%, rgba(255, 138, 61, 0.12) 100%),
+        linear-gradient(135deg, var(--accent-soft) 0%, rgba(61, 220, 255, 0.14) 100%),
         #FFFFFF;
     border-color: var(--accent);
 }
@@ -367,9 +367,9 @@ button:focus-visible {
     text-align: center;
     color: #FFFFFF;
     background:
-        radial-gradient(circle at 10% 10%, rgba(25, 195, 177, 0.45) 0%, transparent 40%),
-        radial-gradient(circle at 92% 0%, rgba(255, 138, 61, 0.6) 0%, transparent 40%),
-        linear-gradient(120deg, #4B2FE0 0%, #8A35D8 50%, #D42F7C 100%);
+        radial-gradient(circle at 10% 10%, rgba(95, 227, 224, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 92% 0%, rgba(61, 220, 255, 0.55) 0%, transparent 40%),
+        linear-gradient(120deg, #0038C7 0%, var(--blue) 55%, #0A84D0 100%);
 }
 
 .case-footer h2 {
@@ -387,7 +387,7 @@ button:focus-visible {
     border-radius: 999px;
     color: var(--ink);
     font-weight: 500;
-    box-shadow: 0 14px 34px rgba(30, 20, 66, 0.3);
+    box-shadow: 0 14px 34px rgba(11, 37, 69, 0.3);
     text-decoration: none;
     font-size: 1.125rem;
     letter-spacing: 0.03em;
@@ -414,7 +414,7 @@ button:focus-visible {
 }
 
 .footer-links a:hover {
-    color: var(--sun);
+    color: var(--sky);
     opacity: 1;
 }
 
@@ -427,7 +427,7 @@ button:focus-visible {
     margin: 0;
     padding: 2rem;
     border: 0;
-    background: rgba(30, 20, 66, 0.94);
+    background: rgba(11, 37, 69, 0.94);
     display: none;
     align-items: center;
     justify-content: center;
@@ -452,7 +452,7 @@ button:focus-visible {
     height: 2.75rem;
     border: 1px solid rgba(234, 240, 247, 0.3);
     border-radius: 50%;
-    background: rgba(30, 20, 66, 0.6);
+    background: rgba(11, 37, 69, 0.6);
     color: var(--cream);
     font-size: 1.5rem;
     line-height: 1;
