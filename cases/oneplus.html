@@ -32,30 +32,122 @@
 
     <main>
         <div class="wrap">
-            <!-- Gallery: put files in cases/media/oneplus/ and replace the placeholders.
-                 Picture: <figure class="media"><img src="media/oneplus/campaign.jpg" alt="What the picture shows" loading="lazy"><figcaption>Optional caption</figcaption></figure>
-                 Video with sound and controls: <figure class="media"><video src="media/oneplus/spot.mp4" controls playsinline preload="metadata"></video></figure>
-                 Silent looping clip: <figure class="media"><video src="media/oneplus/loop.mp4" autoplay muted loop playsinline aria-hidden="true"></video></figure>
-                 Add "media--wide" to a figure's class to make it full width. -->
-            <section class="gallery" aria-labelledby="gallery-title">
-                <h2 id="gallery-title" class="visually-hidden">Selected work</h2>
-                <div class="gallery-grid">
-                    <figure class="media media--wide media--placeholder"><span>Picture or video</span></figure>
-                    <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                    <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                    <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                    <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                    <figure class="media media--wide media--placeholder"><span>Picture or video</span></figure>
-                </div>
-            </section>
             <section class="case-section" aria-labelledby="did-title">
                 <h2 id="did-title">What I did</h2>
-                <ul>
-                    <li>Implemented and localized OnePlus HQ and EMEA product launches for the Finnish market.</li>
-                    <li>Owned OnePlus Finland's social media and built the community with influencers, a platform-specific tone and proactive engagement.</li>
-                    <li>Ran performance marketing and paid social, from targeting and budget to optimisation.</li>
-                    <li>Produced creative and copy, and localized web and e-commerce content across channels.</li>
-                </ul>
+                <div>
+                    <p>Brought OnePlus HQ and EMEA product launches to the Finnish market and localized them, from creative and copy to web and e-commerce content. I owned OnePlus Finland's social media, built the community with influencers and a platform-specific tone, and ran performance marketing and paid social from targeting and budget to optimisation.</p>
+                    <ul>
+                        <li>Implemented and localized OnePlus HQ and EMEA product launches for the Finnish market.</li>
+                        <li>Owned OnePlus Finland's social media and built the community with influencers, a platform-specific tone and proactive engagement.</li>
+                        <li>Ran performance marketing and paid social, from targeting and budget to optimisation.</li>
+                        <li>Produced creative and copy, and localized web and e-commerce content across channels.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Campaigns. Files live in cases/media/oneplus/<campaign>/.
+                 Same building blocks as the Elisa page: .masonry for pictures and videos of
+                 any shape, .campaign-feature for one full-width item. -->
+            <section class="campaign" aria-labelledby="oneplus-10-pro-title">
+                <header class="campaign-header">
+                    <h2 id="oneplus-10-pro-title">OnePlus 10 Pro</h2>
+                    <p>Launch campaign · Helsinki, March 2022</p>
+                </header>
+                <div class="masonry">
+                    <figure class="media">
+                        <video src="media/oneplus/oneplus-10-pro/launch-event-aftermovie.mp4" poster="media/oneplus/oneplus-10-pro/launch-event-aftermovie-poster.jpg" controls playsinline preload="none" aria-label="OnePlus 10 Pro launch event aftermovie"></video>
+                        <figcaption>Launch event aftermovie, OnePlus Academy Helsinki</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <video src="media/oneplus/oneplus-10-pro/jvg-social-video.mp4" poster="media/oneplus/oneplus-10-pro/jvg-social-video-poster.jpg" controls playsinline preload="none" aria-label="OnePlus 10 Pro social video with JVG"></video>
+                        <figcaption>Social video with JVG</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <video src="media/oneplus/oneplus-10-pro/influencer-video.mp4" poster="media/oneplus/oneplus-10-pro/influencer-video-poster.jpg" controls playsinline preload="none" aria-label="OnePlus 10 Pro influencer video"></video>
+                        <figcaption>Influencer social video</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="campaign" aria-labelledby="five-years-title">
+                <header class="campaign-header">
+                    <h2 id="five-years-title">5 years in Finland</h2>
+                    <p>Community celebration · October 2021</p>
+                </header>
+                <div class="masonry">
+                    <figure class="media">
+                        <img src="media/oneplus/5-years-in-finland/facebook-post.jpg" alt="OnePlus Finland Facebook post celebrating five years in Finland" loading="lazy">
+                        <figcaption>Organic social post, Facebook</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/oneplus/5-years-in-finland/herbalisti-instagram-post.jpg" alt="Herbalisti Instagram post for the OnePlus Finland five-year celebration" loading="lazy">
+                        <figcaption>Influencer post with Herbalisti, Instagram</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/oneplus/5-years-in-finland/suomimobiili-article.jpg" alt="SuomiMobiili article about OnePlus five years in Finland" loading="lazy">
+                        <figcaption>PR coverage, SuomiMobiili</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/oneplus/5-years-in-finland/herbalisti-youtube-video.jpg" alt="Herbalisti YouTube video in collaboration with OnePlus, over 2 million views" loading="lazy">
+                        <figcaption>YouTube video by Herbalisti, 2M+ views</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="campaign" aria-labelledby="oneplus-9-title">
+                <header class="campaign-header">
+                    <h2 id="oneplus-9-title">OnePlus 9 Series</h2>
+                    <p>Hasselblad camera launch and #TrueColorsFinland · Spring 2021</p>
+                </header>
+                <div class="masonry">
+                    <figure class="media">
+                        <video src="media/oneplus/oneplus-9-series/jvg-social-video.mp4" poster="media/oneplus/oneplus-9-series/jvg-social-video-poster.jpg" controls playsinline preload="none" aria-label="OnePlus 9 Series social video with JVG"></video>
+                        <figcaption>Social video with JVG</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/oneplus/oneplus-9-series/website-banner.jpg" alt="OnePlus 9 Pro Hasselblad camera banner on the OnePlus website" loading="lazy">
+                        <figcaption>Website and webshop banner</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/oneplus/oneplus-9-series/facebook-post.jpg" alt="OnePlus Finland Facebook post for #TrueColorsFinland" loading="lazy">
+                        <figcaption>Organic social post, Facebook</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/oneplus/oneplus-9-series/forum-post.jpg" alt="OnePlus community forum post launching the True Color campaign" loading="lazy">
+                        <figcaption>Community forum post</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/oneplus/oneplus-9-series/herbalisti-instagram-post.jpg" alt="Herbalisti Instagram giveaway post for the OnePlus 9 Pro" loading="lazy">
+                        <figcaption>Influencer post with Herbalisti, Instagram</figcaption>
+                    </figure>
+                </div>
+                <div class="campaign-feature">
+                    <figure class="media">
+                        <img src="media/oneplus/oneplus-9-series/pantone-article.jpg" alt="Pantone article on a color palette reflecting the true colors of Finland" loading="lazy">
+                        <figcaption>Pantone article, the True Colors of Finland palette</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="campaign" aria-labelledby="more-title">
+                <header class="campaign-header">
+                    <h2 id="more-title">More launches and community</h2>
+                    <p>Events, music and seasonal campaigns</p>
+                </header>
+                <div class="masonry">
+                    <figure class="media">
+                        <video src="media/oneplus/nord-2-pac-man/event-aftermovie.mp4" poster="media/oneplus/nord-2-pac-man/event-aftermovie-poster.jpg" controls playsinline preload="none" aria-label="Nord 2 PAC-MAN Edition event aftermovie"></video>
+                        <figcaption>Nord 2 PAC-MAN Edition, event aftermovie</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <video src="media/oneplus/community-concert/jvg-concert.mp4" poster="media/oneplus/community-concert/jvg-concert-poster.jpg" controls playsinline preload="none" aria-label="OnePlus community concert by JVG"></video>
+                        <figcaption>Community celebration concert by JVG</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/oneplus/nord-midsummer/instagram-post.jpg" alt="OnePlus Finland Instagram post for the Nord midsummer photo contest" loading="lazy">
+                        <figcaption>Nord series midsummer campaign, Instagram</figcaption>
+                    </figure>
+                </div>
             </section>
 
             <a class="next-case" href="republic.html">
