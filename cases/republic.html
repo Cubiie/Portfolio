@@ -32,30 +32,86 @@
 
     <main>
         <div class="wrap">
-            <!-- Gallery: put files in cases/media/republic/ and replace the placeholders.
-                 Picture: <figure class="media"><img src="media/republic/campaign.jpg" alt="What the picture shows" loading="lazy"><figcaption>Optional caption</figcaption></figure>
-                 Video with sound and controls: <figure class="media"><video src="media/republic/spot.mp4" controls playsinline preload="metadata"></video></figure>
-                 Silent looping clip: <figure class="media"><video src="media/republic/loop.mp4" autoplay muted loop playsinline aria-hidden="true"></video></figure>
-                 Add "media--wide" to a figure's class to make it full width. -->
-            <section class="gallery" aria-labelledby="gallery-title">
-                <h2 id="gallery-title" class="visually-hidden">Selected work</h2>
-                <div class="gallery-grid">
-                    <figure class="media media--wide media--placeholder"><span>Picture or video</span></figure>
-                    <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                    <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                    <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                    <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                    <figure class="media media--wide media--placeholder"><span>Picture or video</span></figure>
-                </div>
-            </section>
             <section class="case-section" aria-labelledby="did-title">
                 <h2 id="did-title">What I did</h2>
-                <ul>
-                    <li>Managed PR and campaign projects for major clients including Sony PlayStation and Huawei.</li>
-                    <li>Helped Sony keep console market leadership and strong sales in Finland through coordinated PR and community work between Nordic stakeholders.</li>
-                    <li>Supported influencer marketing and organised client events.</li>
-                    <li>Produced copy and branded content, and assisted with localisation.</li>
-                </ul>
+                <div>
+                    <p>PR, influencer and campaign work for major tech and gaming clients, including Sony PlayStation and Huawei, coordinated across Nordic stakeholders.</p>
+                    <ul>
+                        <li>Managed PR and campaign projects for major clients including Sony PlayStation and Huawei.</li>
+                        <li>Helped Sony keep console market leadership and strong sales in Finland through coordinated PR and community work between Nordic stakeholders.</li>
+                        <li>Supported influencer marketing and organised client events.</li>
+                        <li>Produced copy and branded content, and assisted with localisation.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Campaigns. Files live in cases/media/republic/<campaign>/.
+                 Same building blocks as the Elisa and OnePlus pages. -->
+            <section class="campaign" aria-labelledby="ps25-title">
+                <header class="campaign-header">
+                    <h2 id="ps25-title">PlayStation 25 years</h2>
+                    <p>Anniversary PR and social · December 2019</p>
+                </header>
+                <div class="masonry">
+                    <figure class="media">
+                        <img src="media/republic/playstation-25/instagram-cake-post.jpg" alt="PlayStation Suomi Instagram post of a PlayStation 25th anniversary cake" loading="lazy">
+                        <figcaption>Organic social post, PlayStation Suomi Instagram</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/republic/playstation-25/tekniikan-maailma-article.jpg" alt="Tekniikan Maailma article on the 25th anniversary of PlayStation" loading="lazy">
+                        <figcaption><a href="https://tekniikanmaailma.fi/onneksi-olkoon-25-vuotta-tayttava-playstation-ensimmainen-pleikkari-sai-alkunsa-nintendon-tilaustyona-mutta-paatyi-muuttamaan-pelimaailman-ikuisiksi-ajoiksi/" target="_blank" rel="noopener noreferrer">PR coverage, Tekniikan Maailma ↗</a></figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/republic/playstation-25/muropaketti-article.jpg" alt="Muropaketti article on PlayStation turning 25" loading="lazy">
+                        <figcaption><a href="https://muropaketti.com/pelit/playstation-25-vuotta-nama-olivat-klassisen-konsolin-suurimmat-menestykset/" target="_blank" rel="noopener noreferrer">PR coverage, Muropaketti ↗</a></figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/republic/playstation-25/stara-article.jpg" alt="Stara article on PlayStation milestones at 25 years" loading="lazy">
+                        <figcaption><a href="https://www.stara.fi/2019/12/04/playstation-taytti-eilen-25-vuotta-tassa-merkittavimmat-virstanpylvaat/" target="_blank" rel="noopener noreferrer">PR coverage, Stara ↗</a></figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="campaign" aria-labelledby="christmas-title">
+                <header class="campaign-header">
+                    <h2 id="christmas-title">PlayStation Christmas</h2>
+                    <p>Influencer gift campaign · December 2019</p>
+                </header>
+                <div class="campaign-feature">
+                    <figure class="media">
+                        <video src="media/republic/christmas-2019/luugi-youtube-video.mp4" poster="media/republic/christmas-2019/luugi-youtube-video-poster.jpg" controls playsinline preload="none" aria-label="Luugi YouTube video unboxing a Christmas package from PlayStation Suomi"></video>
+                        <figcaption>YouTube video by Luugi, Christmas package from PlayStation Suomi</figcaption>
+                    </figure>
+                </div>
+                <div class="masonry">
+                    <figure class="media">
+                        <img src="media/republic/christmas-2019/scouppi-gift-post.jpg" alt="Influencer Scouppi Instagram post with rose gold PlayStation 4 accessories" loading="lazy">
+                        <figcaption>Influencer post with Scouppi, Instagram</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/republic/christmas-2019/scouppi-gaming-night-post.jpg" alt="Scouppi Instagram post from a PlayStation Christmas gaming evening" loading="lazy">
+                        <figcaption>Influencer post with Scouppi, Instagram</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="campaign" aria-labelledby="autumn-title">
+                <header class="campaign-header">
+                    <h2 id="autumn-title">Game and service launches</h2>
+                    <p>Death Stranding and PlayStation Now · Autumn 2019</p>
+                </header>
+                <div class="campaign-feature">
+                    <figure class="media">
+                        <video src="media/republic/autumn-launches-2019/death-stranding-youtube-video.mp4" poster="media/republic/autumn-launches-2019/death-stranding-youtube-video-poster.jpg" controls playsinline preload="none" aria-label="Influencer YouTube video opening a secret Death Stranding seeding case"></video>
+                        <figcaption>Influencer YouTube video, Death Stranding seeding case</figcaption>
+                    </figure>
+                </div>
+                <div class="masonry">
+                    <figure class="media">
+                        <img src="media/republic/autumn-launches-2019/ps-now-matteplays-post.jpg" alt="Influencer Matteplays Instagram post about PlayStation Now" loading="lazy">
+                        <figcaption>Influencer post with Matteplays, Instagram, PlayStation Now</figcaption>
+                    </figure>
+                </div>
             </section>
 
             <a class="next-case" href="elisa.html">
