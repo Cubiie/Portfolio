@@ -368,9 +368,11 @@
             max-width: 16rem;
         }
 
-        /* Keep a short label on one line */
-        .stat-label--nowrap {
-            white-space: nowrap;
+        /* Keep a short label on one line on desktop; phones wrap as normal */
+        @media (min-width: 969px) {
+            .stat-label--nowrap {
+                white-space: nowrap;
+            }
         }
 
         .case-tags {
