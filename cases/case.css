@@ -259,6 +259,17 @@ button:focus-visible {
     border-top: 1px solid var(--line);
 }
 
+.media figcaption a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(234, 240, 247, 0.4);
+    text-underline-offset: 3px;
+}
+
+.media figcaption a:hover {
+    text-decoration-color: currentColor;
+}
+
 /* Empty slot shown until real pictures or videos are added */
 .media--placeholder {
     aspect-ratio: 16 / 10;
