@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Johan Björkman · Creative AI Marketing Strategist</title>
-    <meta name="description" content="Johan Björkman is a creative AI marketing strategist who helps brands win attention and drive sales, from campaign strategy and AI-powered creative to social, PR and performance marketing.">
+    <title>Johan Björkman · AI-Fluent MarCom Pro</title>
+    <meta name="description" content="Johan Björkman is an AI-fluent MarCom pro. Smarter marketing for all: human ideas at AI speed, from branding and strategy to 360 media, creative work and influencer marketing.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Johan Björkman · Creative AI Marketing Strategist">
+    <meta property="og:title" content="Johan Björkman · AI-Fluent MarCom Pro">
     <meta property="og:description" content="Selected work for Elisa, OnePlus and Republic: retail campaigns, launches, social, PR and performance marketing.">
     <meta property="og:url" content="https://cubiie.github.io/Portfolio/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,9 +95,9 @@
         }
 
         .hero-eyebrow {
-            font-size: clamp(0.8rem, 1.4vw, 1rem);
-            font-weight: 400;
-            letter-spacing: 0.3em;
+            font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+            font-weight: 500;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
             color: var(--sky);
             margin-bottom: 1.25rem;
@@ -127,6 +127,10 @@
             text-wrap: balance;
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+
+        .hero-tagline .nowrap {
+            white-space: nowrap;
         }
 
         .hero-tagline strong {
@@ -368,6 +372,13 @@
             max-width: 16rem;
         }
 
+        /* Keep a short label on one line on desktop; phones wrap as normal */
+        @media (min-width: 969px) {
+            .stat-label--nowrap {
+                white-space: nowrap;
+            }
+        }
+
         .case-tags {
             display: flex;
             flex-wrap: wrap;
@@ -561,7 +572,7 @@
 
         @media (max-width: 480px) {
             .hero-eyebrow {
-                letter-spacing: 0.14em;
+                letter-spacing: 0.12em;
             }
         }
 
@@ -602,9 +613,9 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <p class="hero-eyebrow">Creative AI Marketing Strategist</p>
+            <p class="hero-eyebrow">AI-Fluent MarCom Pro</p>
             <h1>Johan Björkman</h1>
-            <p class="hero-tagline">I help brands <strong>win attention and&nbsp;drive&nbsp;sales</strong>, from campaign strategy and AI-powered creative to social, PR and performance&nbsp;marketing.</p>
+            <p class="hero-tagline">Smarter marketing for all: <strong class="nowrap">human ideas at AI speed</strong>, from branding and strategy to 360&nbsp;media, creative work and influencer&nbsp;marketing.</p>
         </div>
         <a href="#elisa" class="scroll-indicator" aria-label="Scroll to my work">
             <span aria-hidden="true"></span>
@@ -620,7 +631,7 @@
         <div class="case-content">
             <article class="case-text">
                 <h2 id="elisa-title">Elisa</h2>
-                <p>Device and 5G marketing across B2C and B2B, through the full retail calendar from weekly promotions to Black Friday, the biggest peak of the year.</p>
+                <p>Device and 5G marketing across B2C and B2B, through the full retail calendar from weekly promotions to large campaigns like Black Friday.</p>
                 <div class="case-stats">
                     <div class="stat">
                         <span class="stat-value">+14%</span>
@@ -656,7 +667,7 @@
                 <div class="case-stats">
                     <div class="stat">
                         <span class="stat-value">~20%</span>
-                        <span class="stat-label">Record market share in Finland</span>
+                        <span class="stat-label stat-label--nowrap">Record market share in Finland</span>
                     </div>
                     <div class="stat">
                         <span class="stat-value">+40K</span>
