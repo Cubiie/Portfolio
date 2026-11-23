@@ -146,6 +146,7 @@
         #elisa { --accent: #1F5FBF; --accent-soft: rgba(31, 95, 191, 0.1); --tint: rgba(13, 43, 92, 0.25); }
         #oneplus { --accent: #1A6E9E; --accent-soft: rgba(26, 110, 158, 0.1); --tint: rgba(13, 43, 92, 0.25); }
         #republic { --accent: #34489E; --accent-soft: rgba(52, 72, 158, 0.1); --tint: rgba(13, 43, 92, 0.25); }
+        #more-work { --accent: #2B6CB8; --accent-soft: rgba(43, 108, 184, 0.1); --tint: rgba(13, 43, 92, 0.25); }
 
         body {
             font-family: 'Work Sans', sans-serif;
@@ -678,6 +679,57 @@
             }
         }
 
+        /* Banner variant (More work): a wide, centred rectangle that closes
+           the list of cases, text on the left and the button on the right */
+        /* The banner sits low in the section so the top of the video (a logo) stays visible */
+        .case-study--banner {
+            align-items: flex-end;
+            background: #07172A;
+        }
+
+        .case-study--banner .case-content {
+            padding-bottom: 2.5rem;
+        }
+
+        /* More solid than the other cards, since this video is mostly dark */
+        .case-study--banner .case-text {
+            background: rgba(255, 255, 255, 0.96);
+            padding: 2.25rem 3rem;
+        }
+
+        .case-study--banner .case-text h2 {
+            font-size: clamp(2.25rem, 4vw, 3.5rem);
+        }
+
+        .case-study--banner .case-content,
+        .case-study--banner:nth-child(odd of .case-study) .case-content {
+            justify-items: center;
+        }
+
+        .case-study--banner .case-text {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 2rem 4rem;
+            align-items: center;
+        }
+
+        .case-study--banner .case-text h2 {
+            margin-bottom: 1rem;
+        }
+
+        .case-study--banner .case-text p,
+        .case-study--banner .case-tags {
+            margin-bottom: 0;
+        }
+
+        .case-study--banner .banner-side {
+            display: grid;
+            gap: 2rem;
+            justify-items: start;
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             .case-study {
@@ -693,6 +745,33 @@
             .case-text {
                 max-width: 100%;
                 padding: 2rem 1.5rem;
+            }
+
+            .case-study--banner .case-text {
+                grid-template-columns: 1fr;
+                padding: 2rem 1.5rem;
+            }
+
+            /* Phones and tablets: the whole video frame on top, banner under it,
+               so the logo is never covered */
+            .case-study--banner {
+                min-height: 0;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .case-study--banner .parallax-bg {
+                display: none;
+            }
+
+            .case-study--banner .case-bg-video {
+                position: relative;
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+
+            .case-study--banner .case-content {
+                padding: 1.5rem 1.25rem 3rem;
             }
 
             .footer {
@@ -813,6 +892,34 @@
                 <a href="cases/republic.html" class="case-link">
                     View Case Study →
                 </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- More work: many smaller projects collected on one page.
+         A wide, centred banner that closes the list of cases. -->
+    <section class="case-study case-study--banner" id="more-work" aria-labelledby="more-work-title" data-scroll>
+        <div class="parallax-bg"></div>
+        <!-- Opening of a Puolustusvoimat video, so the logo shows above the banner -->
+        <video class="case-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="more-work.mp4" type="video/mp4">
+        </video>
+        <div class="case-content">
+            <article class="case-text">
+                <div class="banner-main">
+                    <h2 id="more-work-title">More work</h2>
+                    <p>A collection of other campaigns, launches and content projects for a range of brands, gathered in one place.</p>
+                </div>
+                <div class="banner-side">
+                    <ul class="case-tags">
+                        <li class="tag">Campaigns</li>
+                        <li class="tag">Content</li>
+                        <li class="tag">Social</li>
+                    </ul>
+                    <a href="cases/more-work.html" class="case-link">
+                        See More Work →
+                    </a>
+                </div>
             </article>
         </div>
     </section>

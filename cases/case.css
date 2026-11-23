@@ -30,6 +30,7 @@
 .case-elisa { --accent: #1F5FBF; --accent-soft: rgba(31, 95, 191, 0.1); }
 .case-oneplus { --accent: #1A6E9E; --accent-soft: rgba(26, 110, 158, 0.1); }
 .case-republic { --accent: #34489E; --accent-soft: rgba(52, 72, 158, 0.1); }
+.case-more-work { --accent: #2B6CB8; --accent-soft: rgba(43, 108, 184, 0.1); }
 
 html {
     scroll-behavior: smooth;
@@ -343,6 +344,55 @@ button:focus-visible {
     background: #000;
 }
 
+/* More work: a grid of smaller projects, each a card with one picture or
+   video, the brand and year, a title and a short description */
+.projects {
+    padding: 4rem 0 5rem;
+    border-top: 1px solid var(--line);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 1.5rem;
+}
+
+.project .media {
+    margin-bottom: 1.25rem;
+}
+
+.project .media img,
+.project .media video {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.project .media--placeholder {
+    aspect-ratio: 4 / 3;
+}
+
+.project-meta {
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.project h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+}
+
+.project p:last-child {
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
 /* Next case */
 .next-case {
     display: block;
@@ -485,6 +535,10 @@ button:focus-visible {
     .masonry {
         columns: 2;
     }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 968px) {
@@ -541,5 +595,10 @@ button:focus-visible {
 @media (max-width: 640px) {
     .masonry {
         columns: 1;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
