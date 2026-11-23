@@ -85,32 +85,57 @@
 
     <main>
         <div class="wrap">
-            <!-- Projects. Each one is an <article class="project">: one picture or
-                 video (<figure class="media"> with an <img> or <video>, like the
-                 case pages), then brand and year, a title and a short line.
-                 Files live in cases/media/more-work/<project>/.
+            <!-- Bigger projects use the campaign blocks from the case pages.
+                 Files live in cases/media/more-work/<project>/. -->
+            <section class="campaign" aria-labelledby="pv-title">
+                <header class="campaign-header">
+                    <h2 id="pv-title">Puolustusvoimat: Intti edessä feat. Jalmafi</h2>
+                    <p>Influencer collaboration · December 2018 – January 2019</p>
+                </header>
+                <div class="gallery-grid campaign-feature">
+                    <figure class="media">
+                        <video src="media/more-work/puolustusvoimat/kengannauhat-intti-edessa-episode.mp4" poster="media/more-work/puolustusvoimat/kengannauhat-intti-edessa-episode-poster.jpg" controls playsinline preload="none" aria-label="Intti edessä feat. Jalmafi episode on the Puolustusvoimat YouTube channel"></video>
+                        <figcaption>Intti edessä feat. Jalmafi episode, Puolustusvoimat YouTube</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <video src="media/more-work/puolustusvoimat/jalmafi-ensimmaiset-paivat-inspisode-197.mp4" poster="media/more-work/puolustusvoimat/jalmafi-ensimmaiset-paivat-inspisode-197-poster.jpg" controls playsinline preload="none" aria-label="Jalmafi YouTube video about the first days of military service"></video>
+                        <figcaption>Ensimmäiset päivät intissä, Inspisode 197, Jalmafi YouTube</figcaption>
+                    </figure>
+                </div>
+                <div class="masonry">
+                    <figure class="media">
+                        <img src="media/more-work/puolustusvoimat/instagram-teaser-post.jpg" alt="Puolustusvoimat Instagram post teasing the Jalmafi series" loading="lazy">
+                        <figcaption>Teaser post, Puolustusvoimat Instagram</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/more-work/puolustusvoimat/instagram-takeover-grid.jpg" alt="Inttielämää Instagram grid announcing that Jalmafi takes over the Defence Forces social channels on 3 to 10 January" loading="lazy">
+                        <figcaption>Social channel takeover, Inttielämää Instagram, 3–10 January 2019</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/more-work/puolustusvoimat/twitter-launch-post.jpg" alt="Puolustusvoimat Twitter post launching the series with Jalmafi" loading="lazy">
+                        <figcaption>Series launch post, Puolustusvoimat Twitter</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/more-work/puolustusvoimat/youtube-ala-keuli-episode.jpg" alt="Intti edessä feat. Jalmafi episode on YouTube" loading="lazy">
+                        <figcaption>Intti edessä episode, Puolustusvoimat YouTube</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/more-work/puolustusvoimat/inttielamaa-instagram-post.jpg" alt="Inttielämää Instagram post announcing the Jalmafi takeover" loading="lazy">
+                        <figcaption>Takeover announcement, Inttielämää Instagram</figcaption>
+                    </figure>
+                    <figure class="media">
+                        <img src="media/more-work/puolustusvoimat/jalmafi-youtube-inspisode-196.jpg" alt="Jalmafi YouTube video on preparing for military service" loading="lazy">
+                        <figcaption>Miten valmistauduin inttiin, Inspisode 196, Jalmafi YouTube</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Smaller projects: each one is an <article class="project"> with one
+                 picture or video, brand and year, a title and a short line.
                  The cards below are placeholders until the files arrive. -->
             <section class="projects" aria-labelledby="projects-title">
-                <h2 id="projects-title" class="visually-hidden">Projects</h2>
+                <h2 id="projects-title" class="visually-hidden">Other projects</h2>
                 <div class="project-grid">
-                    <article class="project">
-                        <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                        <p class="project-meta">Brand · Year</p>
-                        <h3>Project title</h3>
-                        <p>One or two lines on what the project was and what I did.</p>
-                    </article>
-                    <article class="project">
-                        <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                        <p class="project-meta">Brand · Year</p>
-                        <h3>Project title</h3>
-                        <p>One or two lines on what the project was and what I did.</p>
-                    </article>
-                    <article class="project">
-                        <figure class="media media--placeholder"><span>Picture or video</span></figure>
-                        <p class="project-meta">Brand · Year</p>
-                        <h3>Project title</h3>
-                        <p>One or two lines on what the project was and what I did.</p>
-                    </article>
                     <article class="project">
                         <figure class="media media--placeholder"><span>Picture or video</span></figure>
                         <p class="project-meta">Brand · Year</p>
