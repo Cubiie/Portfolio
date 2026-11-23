@@ -681,6 +681,26 @@
 
         /* Banner variant (More work): a wide, centred rectangle that closes
            the list of cases, text on the left and the button on the right */
+        /* The banner sits low in the section so the top of the video (a logo) stays visible */
+        .case-study--banner {
+            align-items: flex-end;
+            background: #07172A;
+        }
+
+        .case-study--banner .case-content {
+            padding-bottom: 2.5rem;
+        }
+
+        /* More solid than the other cards, since this video is mostly dark */
+        .case-study--banner .case-text {
+            background: rgba(255, 255, 255, 0.96);
+            padding: 2.25rem 3rem;
+        }
+
+        .case-study--banner .case-text h2 {
+            font-size: clamp(2.25rem, 4vw, 3.5rem);
+        }
+
         .case-study--banner .case-content,
         .case-study--banner:nth-child(odd of .case-study) .case-content {
             justify-items: center;
@@ -729,6 +749,29 @@
 
             .case-study--banner .case-text {
                 grid-template-columns: 1fr;
+                padding: 2rem 1.5rem;
+            }
+
+            /* Phones and tablets: the whole video frame on top, banner under it,
+               so the logo is never covered */
+            .case-study--banner {
+                min-height: 0;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .case-study--banner .parallax-bg {
+                display: none;
+            }
+
+            .case-study--banner .case-bg-video {
+                position: relative;
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+
+            .case-study--banner .case-content {
+                padding: 1.5rem 1.25rem 3rem;
             }
 
             .footer {
@@ -857,11 +900,10 @@
          A wide, centred banner that closes the list of cases. -->
     <section class="case-study case-study--banner" id="more-work" aria-labelledby="more-work-title" data-scroll>
         <div class="parallax-bg"></div>
-        <!-- Background video: add more-work.mp4 to the repo root and uncomment.
+        <!-- Opening of a Puolustusvoimat video, so the logo shows above the banner -->
         <video class="case-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
             <source src="more-work.mp4" type="video/mp4">
         </video>
-        -->
         <div class="case-content">
             <article class="case-text">
                 <div class="banner-main">
