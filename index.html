@@ -263,6 +263,14 @@
             transition: background-color 0.3s ease;
         }
 
+        /* "Next" arrows on case sections sit above the video and are visible right away */
+        .case-study .scroll-indicator {
+            z-index: 2;
+            opacity: 1;
+            animation: none;
+            filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
+        }
+
         .scroll-indicator:hover {
             background-color: rgba(255, 255, 255, 0.18);
         }
@@ -390,7 +398,6 @@
             backdrop-filter: blur(24px) saturate(180%);
             -webkit-backdrop-filter: blur(24px) saturate(180%);
             border: 1px solid rgba(255, 255, 255, 0.7);
-            border-top: 3px solid var(--accent);
             border-radius: 6px;
             box-shadow: 0 30px 80px rgba(11, 37, 69, 0.25);
             opacity: 0;
@@ -747,6 +754,12 @@
                 padding: 2rem 1.5rem;
             }
 
+            /* Leave room under the card for the next arrow */
+            .case-study .case-content,
+            .case-study:nth-child(odd of .case-study) .case-content {
+                padding-bottom: 7rem;
+            }
+
             .case-study--banner .case-text {
                 grid-template-columns: 1fr;
                 padding: 2rem 1.5rem;
@@ -834,6 +847,9 @@
                 </a>
             </article>
         </div>
+        <a href="#oneplus" class="scroll-indicator" aria-label="Next: OnePlus">
+            <span aria-hidden="true"></span>
+        </a>
     </section>
 
     <!-- Case Study 2 -->
@@ -866,6 +882,9 @@
                 </a>
             </article>
         </div>
+        <a href="#republic" class="scroll-indicator" aria-label="Next: Republic">
+            <span aria-hidden="true"></span>
+        </a>
     </section>
 
     <!-- Case Study 3 -->
@@ -894,6 +913,9 @@
                 </a>
             </article>
         </div>
+        <a href="#more-work" class="scroll-indicator" aria-label="Next: More work">
+            <span aria-hidden="true"></span>
+        </a>
     </section>
 
     <!-- More work: many smaller projects collected on one page.
