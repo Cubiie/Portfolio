@@ -322,6 +322,19 @@ button:focus-visible {
     color: var(--accent);
 }
 
+/* Optional line on the work itself, under the role and date */
+.campaign-header p.campaign-summary {
+    max-width: 46rem;
+    margin-top: 1rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: 400;
+    color: var(--ink);
+    opacity: 0.85;
+}
+
 .campaign-feature {
     margin-bottom: 1.5rem;
 }
