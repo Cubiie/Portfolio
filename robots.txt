@@ -35,4 +35,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://cubiie.github.io/Portfolio/sitemap.xml
+Sitemap: https://johanbjorkman.media/sitemap.xml
