@@ -232,6 +232,14 @@ button:focus-visible {
     box-shadow: 0 12px 30px rgba(11, 37, 69, 0.08);
 }
 
+/* A collage with its own transparent background: no card frame around it */
+.media--bare {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
 .media--wide {
     grid-column: 1 / -1;
 }
@@ -258,6 +266,11 @@ button:focus-visible {
     line-height: 1.5;
     opacity: 0.75;
     border-top: 1px solid var(--line);
+}
+
+.media--bare figcaption {
+    padding: 0.75rem 0 0;
+    border-top: 0;
 }
 
 .media figcaption a {
