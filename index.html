@@ -739,10 +739,6 @@
 
         /* Responsive */
         @media (max-width: 968px) {
-            .case-study {
-                min-height: 100vh;
-            }
-
             .case-content,
             .case-study:nth-child(odd of .case-study) .case-content {
                 padding: 3rem 1.25rem;
@@ -752,6 +748,11 @@
             .case-text {
                 max-width: 100%;
                 padding: 2rem 1.5rem;
+            }
+
+            /* Solid card on the dark background, like More work */
+            .case-text {
+                background: rgba(255, 255, 255, 0.96);
             }
 
             /* Leave room under the card for the next arrow */
@@ -765,22 +766,28 @@
                 padding: 2rem 1.5rem;
             }
 
-            /* Phones and tablets: the whole video frame on top, banner under it,
-               so the logo is never covered */
-            .case-study--banner {
+            /* Phones and tablets: every case shows the whole video frame on top,
+               with its card under it, so nothing in the video is cropped */
+            .case-study {
                 min-height: 0;
                 flex-direction: column;
                 align-items: stretch;
+                background: #07172A;
             }
 
-            .case-study--banner .parallax-bg {
+            .case-study .parallax-bg {
                 display: none;
             }
 
-            .case-study--banner .case-bg-video {
+            .case-study .case-bg-video {
                 position: relative;
                 height: auto;
                 aspect-ratio: 16 / 9;
+            }
+
+            .case-study .case-content,
+            .case-study:nth-child(odd of .case-study) .case-content {
+                padding-top: 1.5rem;
             }
 
             .case-study--banner .case-content {
